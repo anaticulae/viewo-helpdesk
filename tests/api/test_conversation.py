@@ -14,36 +14,34 @@ import tests
 
 def test_have_conversation(client):
     tests.login(client)
-    result = tests.send_message(
-        client,
-        userid=tests.TESTUSER,
-        title='Ich habe eine Frage',
-        text='Langtext',
-    )
-    parent = result['success']['date']
-    tests.logout(client)
-    tests.login_admin(client)
-    result = tests.send_message(
-        client,
-        userid=tests.TESTUSER,
-        text=('Ein Techniker ist informiert und wir sich um Ihr '
-              'Problem kümmern - bleiben Sie auf Empfang.'),
-        parent=parent,
-    )
-    tests.logout(client)
+    with tests.session(client):
+        result = tests.send_message(
+            client,
+            userid=tests.TESTUSER,
+            title='Ich habe eine Frage',
+            text='Langtext',
+        )
+        parent = result['success']['date']
+    with tests.session_admin(client):
+        result = tests.send_message(
+            client,
+            userid=tests.TESTUSER,
+            text=('Ein Techniker ist informiert und wir sich um Ihr '
+                  'Problem kümmern - bleiben Sie auf Empfang.'),
+            parent=parent,
+        )
     tests.sleep()
-    tests.login(client)
-    tests.send_message(
-        client,
-        userid=tests.TESTUSER,
-        text='Haben Sie vielen Dank!',
-        parent=parent,
-    )
 
-    dialog = utilatest.apicall(client, f'/dialog/{tests.TESTUSER}/{parent}')
+    with tests.session(client):
+        tests.send_message(
+            client,
+            userid=tests.TESTUSER,
+            text='Haben Sie vielen Dank!',
+            parent=parent,
+        )
+        dialog = utilatest.apicall(client, f'/dialog/{tests.TESTUSER}/{parent}')
     assert len(dialog['messages']) == 3
 
-    tests.logout(client)
-    tests.login_admin(client)
-    userdialogs = utilatest.apicall(client, f'/dialogs/{tests.TESTUSER}')
+    with tests.session_admin(client):
+        userdialogs = utilatest.apicall(client, f'/dialogs/{tests.TESTUSER}')
     assert len(userdialogs['dialogs']) == 1

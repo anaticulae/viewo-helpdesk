@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import contextlib
 import time
 
 import utilatest
@@ -50,6 +51,20 @@ def login_admin(client):
         userid=admin_helpdesk.config.ADMIN_NAME,
         password=admin_helpdesk.config.ADMIN_PASSWORD,
     )
+
+
+@contextlib.contextmanager
+def session(client):
+    login(client)
+    yield
+    logout(client)
+
+
+@contextlib.contextmanager
+def session_admin(client):
+    login_admin(client)
+    yield
+    logout(client)
 
 
 def send_message(client, userid, text, title=None, parent=None, category=10):
