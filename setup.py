@@ -50,6 +50,7 @@ if __name__ == "__main__":
         ],
         packages=[
             'admin_helpdesk',
+            'admin_helpdesk.api',
             'admin_helpdesk.message',
             'admin_helpdesk.view',
         ],

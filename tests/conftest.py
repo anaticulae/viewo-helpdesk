@@ -7,6 +7,13 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-from admin_helpdesk.fixtures import app  # pylint:disable=W0611
+import utilatest
+
+import admin_helpdesk.config
+from admin_helpdesk.fixtures import appi  # pylint:disable=W0611
+from admin_helpdesk.fixtures import client  # pylint:disable=W0611
+from tests.fixtures import client_single  # pylint:disable=W0611
 
 pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
+
+utilatest.setup(admin_helpdesk.config.API_PREFIX)

@@ -15,6 +15,8 @@ ADMIN_HELPDESK = 'ADMIN_HELPDESK'
 
 SECRET_KEY = b'helmut_max_power_abs29.nsTODOThisIsVerySecreyISwarTODO'
 
+API_PREFIX = '/api/v0'
+
 
 def helpdesk() -> str:
     path = flask.current_app.config[ADMIN_HELPDESK]

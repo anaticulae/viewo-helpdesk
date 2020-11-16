@@ -12,13 +12,18 @@ import time
 import flask
 
 import admin_helpdesk.config
+from admin_helpdesk.api import api_message
 
 
 def create(config=None) -> flask.Flask:
     appi = flask.Flask(__name__)
     appi.secret_key = admin_helpdesk.config.SECRET_KEY
+
     if config:
         appi.config.update(config)
+
+    url_prefix = admin_helpdesk.config.API_PREFIX
+    appi.register_blueprint(api_message, url_prefix=url_prefix)
     return appi
 
 
