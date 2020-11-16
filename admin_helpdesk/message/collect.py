@@ -67,6 +67,25 @@ def load_users() -> list:
     return users
 
 
+def valid_user(userid: str) -> bool:
+    board = admin_helpdesk.board()
+    userpath = os.path.join(board, userid)
+    if not os.path.exists(userpath):
+        return False
+    return True
+
+
+def valid_dialog(userid: str, date: int) -> bool:
+    if not valid_user(userid):
+        return False
+    date = f'{date}'
+    board = admin_helpdesk.board()
+    dialogpath = os.path.join(board, userid, date)
+    if not os.path.exists(dialogpath):
+        return False
+    return True
+
+
 def load_after(date: int, userid: int = None):
     pass
 

@@ -25,6 +25,8 @@ from admin_helpdesk.message.action import write_message
 from admin_helpdesk.message.collect import load_dialogs
 from admin_helpdesk.message.collect import load_messages
 from admin_helpdesk.message.collect import load_users
+from admin_helpdesk.message.collect import valid_dialog
+from admin_helpdesk.message.collect import valid_user
 from admin_helpdesk.message.path import userpath
 from admin_helpdesk.message.serialize import dump_message
 
