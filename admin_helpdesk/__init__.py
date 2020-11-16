@@ -11,6 +11,8 @@ import os
 
 from admin_helpdesk.app import now
 from admin_helpdesk.config import board
+from admin_helpdesk.fixtures import appi
+from admin_helpdesk.fixtures import client
 from admin_helpdesk.message import Message
 from admin_helpdesk.message import Messages
 from admin_helpdesk.message.action import start_conversion

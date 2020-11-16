@@ -13,13 +13,19 @@ import admin_helpdesk.app
 
 
 @pytest.fixture
-def app(testdir):
+def appi(testdir):
     """Create and configure a new app instance for each test."""
     # create the app with common test config
-    appi = admin_helpdesk.app.create(
+    created = admin_helpdesk.app.create(
         config=dict(
             ADMIN_HELPDESK=testdir.tmpdir,
             TESTING=True,
         ))
-    with appi.app_context():
-        yield appi
+    with created.app_context():
+        yield created
+
+
+@pytest.fixture
+def client(appi):  # pylint:disable=W0621
+    """A test client for the app."""
+    return appi.test_client()

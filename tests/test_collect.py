@@ -12,7 +12,7 @@ import pytest
 import admin_helpdesk
 
 
-@pytest.mark.usefixtures('app')
+@pytest.mark.usefixtures('appi')
 def test_load_users():
     users = admin_helpdesk.load_users()
     assert not users

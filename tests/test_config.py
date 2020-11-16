@@ -12,7 +12,7 @@ import pytest
 import admin_helpdesk.config
 
 
-@pytest.mark.usefixtures('app')
+@pytest.mark.usefixtures('appi')
 def test_access_root():
     root = admin_helpdesk.config.helpdesk()
     assert root

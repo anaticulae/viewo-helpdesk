@@ -13,7 +13,7 @@ import admin_helpdesk
 import tests
 
 
-@pytest.mark.usefixtures('app')
+@pytest.mark.usefixtures('appi')
 def test_action_start_converation():
     # user starts issue
     created = admin_helpdesk.start_conversion(tests.TESTMESSAGE)
