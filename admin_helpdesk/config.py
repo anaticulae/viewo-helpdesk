@@ -13,6 +13,9 @@ import flask
 
 ADMIN_HELPDESK = 'ADMIN_HELPDESK'
 
+ADMIN_NAME = 'admin'
+ADMIN_PASSWORD = 'secret'
+
 SECRET_KEY = b'helmut_max_power_abs29.nsTODOThisIsVerySecreyISwarTODO'
 
 API_PREFIX = '/api/v0'

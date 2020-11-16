@@ -9,9 +9,13 @@
 
 import time
 
+import utilatest
+
 import admin_helpdesk
+import admin_helpdesk.config
 
 TESTUSER = 'abcdefghabcdefgh'
+TESTPASSWORD = '88888891'
 TESTMESSAGE = admin_helpdesk.Message(
     userid=TESTUSER,
     title='Problem beim Bezahlen',
@@ -23,6 +27,23 @@ NOW = 1605535477
 
 def sleep():
     time.sleep(1)
+
+
+def login(client, userid=TESTUSER, password=TESTPASSWORD):
+    result = utilatest.apipost(
+        client,
+        '/auth',
+        dict(user=userid, password=password),
+    )
+    assert 'DONE' in result
+
+
+def login_admin(client):
+    login(
+        client,
+        userid=admin_helpdesk.config.ADMIN_NAME,
+        password=admin_helpdesk.config.ADMIN_PASSWORD,
+    )
 
 
 def create_single_sample():

@@ -13,6 +13,7 @@ import flask
 
 import admin_helpdesk
 import admin_helpdesk.api.auth
+from admin_helpdesk.api import api_auth
 from admin_helpdesk.api import api_message
 
 
@@ -25,6 +26,7 @@ def create(config=None) -> flask.Flask:
     if config:
         appi.config.update(config)
 
+    appi.register_blueprint(api_auth, url_prefix=admin_helpdesk.API_PREFIX)
     appi.register_blueprint(api_message, url_prefix=admin_helpdesk.API_PREFIX)
     return appi
 

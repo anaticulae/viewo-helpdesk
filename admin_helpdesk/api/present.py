@@ -9,9 +9,11 @@
 
 import admin_helpdesk
 import admin_helpdesk.api
+import admin_helpdesk.api.auth
 
 
 @admin_helpdesk.api.api_message.route('/dialogs', methods=['GET'])
+@admin_helpdesk.api.auth.admin_required
 def dialogs():
     result = admin_helpdesk.load_dialogs()
     dumped = admin_helpdesk.api.dump(result, 'dialogs')
