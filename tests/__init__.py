@@ -18,7 +18,32 @@ TESTMESSAGE = admin_helpdesk.Message(
     text='Ich habe Probleme beim Bezahlen!\nAchtung!\nHilfe!\nSchnell!',
     category=10,
 )
+NOW = 1605535477
 
 
 def sleep():
     time.sleep(1)
+
+
+def create_single_sample():
+    # user starts issue
+    created = admin_helpdesk.start_conversion(TESTMESSAGE, current=NOW)
+    assert created
+
+    # we reply gently
+    answer = admin_helpdesk.Message(
+        parent=created,
+        userid=TESTUSER,
+        text='Haben Sie nicht genug in der Portokasse?',
+    )
+    admin_helpdesk.write_message(answer, current=NOW + 1)
+
+    # this user is very happy
+    money = admin_helpdesk.Message(
+        parent=created,
+        userid=TESTUSER,
+        writer=TESTUSER,
+        text='Nein, die Box ist voll!',
+    )
+    admin_helpdesk.write_message(money, current=NOW + 2)
+    return created

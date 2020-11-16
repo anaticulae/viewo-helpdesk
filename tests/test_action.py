@@ -16,27 +16,7 @@ import tests
 @pytest.mark.usefixtures('appi')
 def test_action_start_converation():
     # user starts issue
-    created = admin_helpdesk.start_conversion(tests.TESTMESSAGE)
-    assert created
-    tests.sleep()
-
-    # we reply gently
-    answer = admin_helpdesk.Message(
-        parent=created,
-        userid=tests.TESTUSER,
-        text='Haben Sie nicht genug in der Portokasse?',
-    )
-    admin_helpdesk.write_message(answer)
-    tests.sleep()
-
-    # this user is very happy
-    money = admin_helpdesk.Message(
-        parent=created,
-        userid=tests.TESTUSER,
-        writer=tests.TESTUSER,
-        text='Nein, die Box ist voll!',
-    )
-    admin_helpdesk.write_message(money)
+    created = tests.create_single_sample()
 
     dialog = admin_helpdesk.load_messages(tests.TESTUSER, created)
     assert len(dialog) == 3
