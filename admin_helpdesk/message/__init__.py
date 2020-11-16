@@ -23,3 +23,12 @@ class Message:
 
 
 Messages = typing.List[Message]
+
+
+@dataclasses.dataclass
+class Dialog:
+    userid: str = None
+    date: int = None
+
+
+Dialogs = typing.List[Dialog]
