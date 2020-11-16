@@ -63,12 +63,11 @@ def check_login():
 
     # verify
     if not verify_password(user, password):
-        return 'INVALID PASSWORD'
+        return 'INVALID PASSWORD', http.HTTPStatus.NOT_FOUND
 
     # login
     user = load_user(user)
     flask_login.login_user(user)
-
     return 'DONE'
 
 
