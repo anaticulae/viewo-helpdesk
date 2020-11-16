@@ -15,6 +15,7 @@ import flask_login
 import utila
 
 import admin_helpdesk
+import admin_helpdesk.config
 
 api_auth = flask.Blueprint('api_auth', __name__)  # pylint:disable=C0103
 api_message = flask.Blueprint('api_message', __name__)  # pylint:disable=C0103
@@ -22,8 +23,8 @@ api_message = flask.Blueprint('api_message', __name__)  # pylint:disable=C0103
 __all__ = ['api_auth', 'api_message', 'auth', 'delete', 'post', 'present']
 
 
-def dump(data, name='') -> str:
-    uri = flask.request.path
+def dump(data, name='', uri='') -> str:
+    uri = uri if uri else flask.request.path
     name = name if name else 'data'
     data = utila.simplify(data)  # pylint:disable=E1101
     connected = {'uri': uri, name: data}
@@ -63,6 +64,10 @@ def internal(message: str):
     return result, http.HTTPStatus.INTERNAL_SERVER_ERROR
 
 
+def api_call(path):
+    return admin_helpdesk.config.API_PREFIX + path
+
+
 def valid_user(function):
 
     @functools.wraps(function)
@@ -73,10 +78,10 @@ def valid_user(function):
             return bad(f'login required')
         if not userid and not currentuser.is_admin:
             return notfound('not accessable')
-        if userid:
+        if userid and not currentuser.is_admin:
             if not admin_helpdesk.valid_user(userid):
                 return notfound(f'could not locate `{userid}`')
-            if currentuser.get_id() != userid and not currentuser.is_admin:
+            if currentuser.get_id() != userid:
                 return notfound('not accessable')
         return function(*args, **kwargs)
 

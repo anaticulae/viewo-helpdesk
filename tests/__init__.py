@@ -39,12 +39,29 @@ def login(client, userid=TESTUSER, password=TESTPASSWORD):
     assert 'DONE' in result
 
 
+def logout(client):
+    result = utilatest.apicall(client, '/logout')
+    assert 'DONE' in result
+
+
 def login_admin(client):
     login(
         client,
         userid=admin_helpdesk.config.ADMIN_NAME,
         password=admin_helpdesk.config.ADMIN_PASSWORD,
     )
+
+
+def send_message(client, userid, text, title=None, parent=None, category=10):
+    data = {
+        'userid': userid,
+        'title': title,
+        'text': text,
+        'parent': parent,
+        'category': category,
+    }
+    result = utilatest.apipost(client, '/dialog/add', data)
+    return result
 
 
 def create_single_sample():

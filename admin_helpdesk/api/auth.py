@@ -53,6 +53,12 @@ def show_login():
     return NO_ACCESS, http.HTTPStatus.UNAUTHORIZED
 
 
+@admin_helpdesk.api.api_auth.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return 'DONE'
+
+
 @admin_helpdesk.api.api_auth.route('/auth', methods=['POST'])
 def check_login():
     if flask_login.current_user.is_authenticated:
