@@ -10,9 +10,10 @@
 import flask
 import utila
 
+api_auth = flask.Blueprint('api_auth', __name__)  # pylint:disable=C0103
 api_message = flask.Blueprint('api_message', __name__)  # pylint:disable=C0103
 
-__all__ = ['api_message', 'delete', 'post', 'present']
+__all__ = ['api_auth', 'api_message', 'auth', 'delete', 'post', 'present']
 
 
 def dump(data, name='') -> str:

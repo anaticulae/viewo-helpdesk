@@ -12,12 +12,15 @@ import time
 import flask
 
 import admin_helpdesk
+import admin_helpdesk.api.auth
 from admin_helpdesk.api import api_message
 
 
 def create(config=None) -> flask.Flask:
     appi = flask.Flask(__name__)
     appi.secret_key = admin_helpdesk.SECRET_KEY
+
+    admin_helpdesk.api.auth.create_loginmanager(appi)
 
     if config:
         appi.config.update(config)
