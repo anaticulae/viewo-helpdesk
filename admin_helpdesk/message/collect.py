@@ -16,6 +16,7 @@ import admin_helpdesk.config
 
 
 def load_messages(userid: str, date: int) -> admin_helpdesk.Messages:
+    date = f'{date}'
     board = admin_helpdesk.board()
     path = os.path.join(board, userid, date)
     dates = utila.file_list(path)

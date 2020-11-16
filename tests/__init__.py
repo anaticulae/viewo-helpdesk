@@ -23,6 +23,7 @@ TESTMESSAGE = admin_helpdesk.Message(
     category=10,
 )
 NOW = 1605535477
+TESTDATE = NOW
 
 
 def sleep():

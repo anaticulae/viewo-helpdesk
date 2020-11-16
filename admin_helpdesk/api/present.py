@@ -25,8 +25,10 @@ def dialogs(userid: str):
 
 
 @admin_helpdesk.api.api_message.route(
-    '/dialogs/<string(length=16):userid>/<int:date>',
+    '/dialog/<string(length=16):userid>/<int:date>',
     methods=['GET'],
 )
 def dialog_get(userid: str, date: int):
-    return ''
+    messages = admin_helpdesk.load_messages(userid, date)
+    dumped = admin_helpdesk.api.dump(messages, 'messages')
+    return dumped
