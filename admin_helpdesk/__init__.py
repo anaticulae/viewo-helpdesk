@@ -11,6 +11,8 @@ import os
 
 import admin_helpdesk.__patch__
 from admin_helpdesk.app import now
+from admin_helpdesk.config import API_PREFIX
+from admin_helpdesk.config import SECRET_KEY
 from admin_helpdesk.config import board
 from admin_helpdesk.fixtures import appi
 from admin_helpdesk.fixtures import client
