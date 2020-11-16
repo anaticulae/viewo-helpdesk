@@ -12,20 +12,16 @@ import admin_helpdesk.api
 import admin_helpdesk.api.auth
 
 
-@admin_helpdesk.api.api_message.route('/dialogs', methods=['GET'])
+@admin_helpdesk.api.api_message.route(
+    '/dialogs',
+    methods=['GET'],
+    defaults={'userid': None},
+)
 @admin_helpdesk.api.auth.admin_required
-def dialogs():
-    result = admin_helpdesk.load_dialogs()
+def dialogs(userid: str):
+    result = admin_helpdesk.load_dialogs(userid)
     dumped = admin_helpdesk.api.dump(result, 'dialogs')
     return dumped
-
-
-@admin_helpdesk.api.api_message.route(
-    '/dialogs/<string(length=16):userid>',
-    methods=['GET'],
-)
-def dialogs_get(userid: str):
-    return ''
 
 
 @admin_helpdesk.api.api_message.route(

@@ -48,10 +48,10 @@ def load_message(userid: str, start: int, date: str) -> admin_helpdesk.Message:
     return message
 
 
-def load_dialogs() -> admin_helpdesk.Dialogs:
+def load_dialogs(user: str = None) -> admin_helpdesk.Dialogs:
     board = admin_helpdesk.board()
     result = []
-    users = utila.directory_list(board)  # pylint:disable=E1101
+    users = utila.directory_list(board) if user is None else [user]  # pylint:disable=E1101
     for userid in users:
         dialogs = utila.directory_list(os.path.join(board, userid))  # pylint:disable=E1101
         for dialog in dialogs:
