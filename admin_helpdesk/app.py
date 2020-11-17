@@ -10,6 +10,7 @@
 import time
 
 import flask
+import flask_bootstrap
 
 import admin_helpdesk
 import admin_helpdesk.api.auth
@@ -25,6 +26,9 @@ def create(config=None) -> flask.Flask:
     appi.secret_key = admin_helpdesk.SECRET_KEY
 
     admin_helpdesk.api.auth.create_loginmanager(appi)
+
+    appi.config.setdefault('BOOTSTRAP_SERVE_LOCAL', True)
+    flask_bootstrap.Bootstrap(app=appi)
 
     if config:
         appi.config.update(config)
