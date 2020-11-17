@@ -15,7 +15,7 @@ import admin_helpdesk
 import admin_helpdesk.config
 
 
-def load_messages(userid: str, date: int) -> admin_helpdesk.Messages:
+def load_messages(userid: str, date: int) -> 'admin_helpdesk.Messages':
     date = f'{date}'
     board = admin_helpdesk.board()
     path = os.path.join(board, userid, date)
@@ -26,7 +26,14 @@ def load_messages(userid: str, date: int) -> admin_helpdesk.Messages:
     return loaded
 
 
-def load_message(userid: str, start: int, date: str) -> admin_helpdesk.Message:
+def load_message(
+        userid: str,
+        start: int,
+        date: str = None,
+) -> 'admin_helpdesk.Message':
+    # load header if no date is given
+    date = date if date else start
+    start, date = f'{start}', f'{date}'
     board = admin_helpdesk.board()
     message = admin_helpdesk.Message(
         userid=userid,
@@ -49,7 +56,7 @@ def load_message(userid: str, start: int, date: str) -> admin_helpdesk.Message:
     return message
 
 
-def load_dialogs(user: str = None) -> admin_helpdesk.Dialogs:
+def load_dialogs(user: str = None) -> 'admin_helpdesk.Dialogs':
     board = admin_helpdesk.board()
     result = []
     users = utila.directory_list(board) if user is None else [user]  # pylint:disable=E1101

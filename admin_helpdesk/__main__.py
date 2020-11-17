@@ -7,6 +7,10 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import os
+
 import admin_helpdesk.app
 
-instance = admin_helpdesk.app.create()  # pylint:disable=C0103
+CONFIG = {'ADMIN_HELPDESK': os.environ['ADMIN_HELPDESK']}
+
+instance = admin_helpdesk.app.create(CONFIG)  # pylint:disable=C0103

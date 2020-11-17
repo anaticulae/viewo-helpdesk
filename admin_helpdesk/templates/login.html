@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Login</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <div class="container">
+        <form method="POST" id="validate_login" role="form" class="form-horizontal">
+            <div class="form-group">
+                <labbel for="user" class="col-sm-2 control-label">Benutzer:</labbel>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="user" value="{{user}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <labbel for="password" class="col-sm-2 control-label">Passwort:</labbel>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control" name="password" value="{{password}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <labbel class="col-sm-2 control-label"></labbel>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-default">Anmelden</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $("#validate_login").submit(function (event) {
+            event.preventDefault();
+            let user = $("input[name='user']")[0].value
+            let password = $("input[name='password']")[0].value
+        });
+    </script>
+</body>

@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<h2>Nachrichten</h2>
+<hr>
+{% if not dialogs %}
+Keine Nachrichten verfügbar.
+{% else %}
+<table class="small_table table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Datum</th>
+            <th class="small">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dialog in dialogs %}
+        <tr>
+            <td>{{dialog['title']}}</td>
+            <td>{{dialog['date']}}</td>
+            <td>
+                <a href="{{ url_for('view_admin.messages_show', userid=dialog['userid'], date=dialog['date']) }}">
+                    Öffnen</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}

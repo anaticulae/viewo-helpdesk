@@ -44,6 +44,14 @@ def verify_password(user: str, password: str) -> bool:
     return True
 
 
+def login(user, password) -> bool:
+    if not verify_password(user, password):
+        return False
+    user = load_user(user)
+    flask_login.login_user(user)
+    return True
+
+
 def load_user(userid):
     return FlaskUser(identifier=userid)
 
@@ -72,8 +80,7 @@ def check_login():
         return 'INVALID PASSWORD', http.HTTPStatus.NOT_FOUND
 
     # login
-    user = load_user(user)
-    flask_login.login_user(user)
+    login(user, password)
     return 'DONE'
 
 

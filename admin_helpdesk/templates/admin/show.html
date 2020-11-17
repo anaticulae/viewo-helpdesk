@@ -1,0 +1,25 @@
+<h2>Nachrichten</h2>
+
+<ul>
+    <li><a href="{{ url_for('view_admin.messages_list') }}">Messages</a></li>
+</ul>
+<hr />
+
+{% for message in messages %}
+{% if message['title'] %}
+<h3>{{message['title']}}</h3>
+{% endif %}
+
+{% if  message['writer'] %}
+User: {{message['writer']}}<br />
+{% else %}
+User: Admin<br />
+{% endif %}
+
+Date: {{message['date']}}<br />
+<p>{{message['text']}}</p>
+____________________<br />
+{% endfor %}
+
+<a href="{{ url_for('view_admin.messages_show', userid=dialog['userid'], date=dialog['date']) }}">
+    Anworten</a>

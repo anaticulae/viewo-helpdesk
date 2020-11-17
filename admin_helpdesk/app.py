@@ -15,6 +15,9 @@ import admin_helpdesk
 import admin_helpdesk.api.auth
 from admin_helpdesk.api import api_auth
 from admin_helpdesk.api import api_message
+from admin_helpdesk.view import *  # pylint:disable=wildcard-import
+from admin_helpdesk.view import view_login
+from admin_helpdesk.view import view_user
 
 
 def create(config=None) -> flask.Flask:
@@ -26,8 +29,15 @@ def create(config=None) -> flask.Flask:
     if config:
         appi.config.update(config)
 
+    # view
+    appi.register_blueprint(view_admin)
+    appi.register_blueprint(view_login)
+    appi.register_blueprint(view_user)
+
+    # api
     appi.register_blueprint(api_auth, url_prefix=admin_helpdesk.API_PREFIX)
     appi.register_blueprint(api_message, url_prefix=admin_helpdesk.API_PREFIX)
+
     return appi
 
 

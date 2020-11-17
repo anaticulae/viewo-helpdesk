@@ -37,6 +37,7 @@ if __name__ == "__main__":
         author='Helmut Konrad Fahrendholz',
         author_email='info@checkitweg.de',
         description='be nice',
+        include_package_data=True,
         install_requires=INSTALL_REQUIRES,
         long_description=README,
         name='admin_helpdesk',

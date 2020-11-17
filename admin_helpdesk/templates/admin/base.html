@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<body>
+
+    {% if current_user %}
+    <a href="{{ url_for('api_auth.logout') }}">Logout</a>
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+</body>
