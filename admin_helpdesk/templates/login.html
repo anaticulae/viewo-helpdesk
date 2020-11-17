@@ -4,6 +4,16 @@
 
 {% block content %}
 <h1>Login</h1>
+
+<div class="container" id="nogoodnews">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        {{ button(caption='&times;', class='close', data_dismiss='alert') }}
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
 <div class="container">
     <form method="POST" id="validate_login" role="form" class="form-horizontal">
         <div class="form-group">
@@ -37,6 +47,30 @@
         event.preventDefault();
         let user = $("input[name='user']")[0].value
         let password = $("input[name='password']")[0].value
+        login(user, password)
     });
+
+    function login(user, password) {
+        let url = `/api/v0/auth`
+        $.ajax(url, {
+            method: "POST",
+            data: { 'user': user, 'password': password },
+            success: function (response) {
+                window.location.replace(response['link'])
+            },
+            error: function () {
+                user_error('invalid login data')
+            }
+        })
+    }
+
+    function user_error(message) {
+        let entry = `<div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                ${message}
+                </div>`
+        $('#nogoodnews').append(entry)
+    }
+
 </script>
 {% endblock %}

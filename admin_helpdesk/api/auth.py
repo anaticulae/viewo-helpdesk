@@ -41,7 +41,10 @@ def create_loginmanager(app):
 
 
 def verify_password(user: str, password: str) -> bool:
-    return True
+    if user == admin_helpdesk.config.ADMIN_NAME:
+        if password == admin_helpdesk.config.ADMIN_PASSWORD:
+            return True
+    return False
 
 
 def login(user, password) -> bool:
@@ -81,6 +84,8 @@ def check_login():
 
     # login
     login(user, password)
+    if flask_login.current_user.is_admin:
+        return flask.jsonify({'link': '/admin/messages/list'})
     return 'DONE'
 
 
