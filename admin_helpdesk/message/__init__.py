@@ -29,6 +29,7 @@ Messages = typing.List[Message]
 class Dialog:
     userid: str = None
     date: int = None
+    title: str = None
 
 
 Dialogs = typing.List[Dialog]

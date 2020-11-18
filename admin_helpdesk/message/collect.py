@@ -64,7 +64,13 @@ def load_dialogs(user: str = None) -> 'admin_helpdesk.Dialogs':
         dialogs = utila.directory_list(os.path.join(board, userid))  # pylint:disable=E1101
         for dialog in dialogs:
             dialog = int(dialog)
-            result.append(admin_helpdesk.Dialog(userid=userid, date=dialog))
+            title = load_message(userid, dialog, dialog).title
+            result.append(
+                admin_helpdesk.Dialog(
+                    userid=userid,
+                    date=dialog,
+                    title=title,
+                ))
     return result
 
 
