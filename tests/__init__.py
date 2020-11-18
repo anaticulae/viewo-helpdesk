@@ -37,7 +37,7 @@ def login(client, userid=TESTUSER, password=TESTPASSWORD):
         '/auth',
         dict(user=userid, password=password),
     )
-    assert 'DONE' in result
+    assert 'DONE' in result or 'link' in str(result)
 
 
 def logout(client):

@@ -9,6 +9,7 @@
 
 import pytest
 
+import admin_helpdesk.api.auth
 import admin_helpdesk.app
 
 
@@ -26,6 +27,16 @@ def appi(testdir):
 
 
 @pytest.fixture
-def client(appi):  # pylint:disable=W0621
+def client(appi, monkeypatch):  # pylint:disable=W0621
     """A test client for the app."""
-    return appi.test_client()
+    with monkeypatch.context() as context:
+
+        def verify_password(user: str, password: str) -> bool:  # pylint:disable=W0613
+            return True
+
+        context.setattr(
+            admin_helpdesk.api.auth,
+            'verify_password',
+            verify_password,
+        )
+        yield appi.test_client()
