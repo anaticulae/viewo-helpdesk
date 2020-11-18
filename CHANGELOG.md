@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.1
+
+### Feature
+
+* add method to setup variables (65cb0395eaba)
+
 ## v0.1.0
 
 ### Feature
