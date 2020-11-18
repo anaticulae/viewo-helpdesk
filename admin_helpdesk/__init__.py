@@ -12,9 +12,11 @@ import os
 import admin_helpdesk.__patch__
 from admin_helpdesk.api import api_call
 from admin_helpdesk.app import now
+from admin_helpdesk.config import ADMIN_HELPDESK
 from admin_helpdesk.config import API_PREFIX
 from admin_helpdesk.config import SECRET_KEY
 from admin_helpdesk.config import board
+from admin_helpdesk.config import configure
 from admin_helpdesk.fixtures import appi
 from admin_helpdesk.fixtures import client
 from admin_helpdesk.message import Dialog

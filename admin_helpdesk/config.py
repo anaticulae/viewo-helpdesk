@@ -31,3 +31,7 @@ def board() -> str:
     path = os.path.join(helpdesk(), 'messages')
     os.makedirs(path, exist_ok=True)
     return path
+
+
+def configure(path):
+    flask.current_app.config[ADMIN_HELPDESK] = path
