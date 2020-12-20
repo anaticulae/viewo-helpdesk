@@ -33,6 +33,6 @@ from admin_helpdesk.message.collect import valid_user
 from admin_helpdesk.message.path import userpath
 from admin_helpdesk.message.serialize import dump_message
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
