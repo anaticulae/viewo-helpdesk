@@ -17,11 +17,11 @@ import admin_helpdesk.message.path
 import admin_helpdesk.message.serialize
 
 
-def delete_message(userid: str, date: int):
+def delete_message(userid: str, date: int):  # pylint:disable=W0613
     pass
 
 
-def delete_history(userid: str):
+def delete_history(userid: str):  # pylint:disable=W0613
     pass
 
 

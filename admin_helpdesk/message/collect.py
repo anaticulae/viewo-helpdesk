@@ -99,9 +99,9 @@ def valid_dialog(userid: str, date: int) -> bool:
     return True
 
 
-def load_after(date: int, userid: int = None):
+def load_after(date: int, userid: int = None): # pylint:disable=W0613
     pass
 
 
-def load_before(data: int, userid: int = None):
+def load_before(data: int, userid: int = None): # pylint:disable=W0613
     pass
