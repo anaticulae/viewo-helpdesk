@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.6
+
+### Documentation
+
+* adjust modules path (12d4e4436b09)
+
 ## v0.1.5
 
 ## v0.1.4
