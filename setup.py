@@ -14,21 +14,15 @@ import re
 import setuptools
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
-UTF8 = 'utf8'
 
-with open(os.path.join(ROOT, 'README.md'), mode='rt', encoding=UTF8) as fp:
+with open(os.path.join(ROOT, 'README.md'), mode='rt', encoding='utf8') as fp:
     README = fp.read()
 
-with open(os.path.join(ROOT, 'admin_helpdesk/__init__.py'),
-          mode='rt',
-          encoding=UTF8) as fp:
+with open(os.path.join(ROOT, 'admin_helpdesk/__init__.py'), encoding='utf8') as fp: # yapf:disable
     VERSION = re.search(r'__version__ = \'(.*?)\'', fp.read()).group(1)
 
-with open(os.path.join(ROOT, "requirements.txt"), mode='rt',
-          encoding=UTF8) as fp:
-    INSTALL_REQUIRES = [
-        line for line in fp.readlines() if line and '#' not in line
-    ]
+with open(os.path.join(ROOT, "requirements.txt"), encoding='utf8') as fp:
+    REQUIRES = [line for line in fp.readlines() if line and '#' not in line]
 
 if __name__ == "__main__":
     # allow ssetup.py to run from another directory
@@ -38,7 +32,7 @@ if __name__ == "__main__":
         author_email='info@checkitweg.de',
         description='be nice',
         include_package_data=True,
-        install_requires=INSTALL_REQUIRES,
+        install_requires=REQUIRES,
         long_description=README,
         name='admin_helpdesk',
         platforms='any',
