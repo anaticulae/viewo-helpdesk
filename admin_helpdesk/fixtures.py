@@ -17,11 +17,10 @@ import admin_helpdesk.app
 def appi(testdir):
     """Create and configure a new app instance for each test."""
     # create the app with common test config
-    created = admin_helpdesk.app.create(
-        config=dict(
-            ADMIN_HELPDESK=testdir.tmpdir,
-            TESTING=True,
-        ))
+    created = admin_helpdesk.app.create(config=dict(
+        ADMIN_HELPDESK=testdir.tmpdir,
+        TESTING=True,
+    ))
     with created.app_context():
         yield created
 

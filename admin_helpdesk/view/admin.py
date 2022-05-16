@@ -32,7 +32,7 @@ def messages_list():
     methods=['GET'],
 )
 @flask_login.login_required
-def messages_reply(userid: str, date: int): # pylint:disable=W0612
+def messages_reply(userid: str, date: int):  # pylint:disable=W0612
     pass
     # messages = admin_helpdesk.message.collect.load_messages(userid, date)
 

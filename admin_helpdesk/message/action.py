@@ -26,8 +26,8 @@ def delete_history(userid: str):  # pylint:disable=W0613
 
 
 def start_conversion(
-        message: admin_helpdesk.message.Message,
-        current: int = None,
+    message: admin_helpdesk.message.Message,
+    current: int = None,
 ) -> int:
     current = f'{admin_helpdesk.now()}' if current is None else f'{current}'
     outpath = os.path.join(admin_helpdesk.userpath(message.userid), current)

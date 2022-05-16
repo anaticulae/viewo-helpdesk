@@ -27,9 +27,9 @@ def load_messages(userid: str, date: int) -> 'admin_helpdesk.Messages':
 
 
 def load_message(
-        userid: str,
-        start: int,
-        date: str = None,
+    userid: str,
+    start: int,
+    date: str = None,
 ) -> 'admin_helpdesk.Message':
     # load header if no date is given
     date = date if date else start
@@ -99,9 +99,9 @@ def valid_dialog(userid: str, date: int) -> bool:
     return True
 
 
-def load_after(date: int, userid: int = None): # pylint:disable=W0613
+def load_after(date: int, userid: int = None):  # pylint:disable=W0613
     pass
 
 
-def load_before(data: int, userid: int = None): # pylint:disable=W0613
+def load_before(data: int, userid: int = None):  # pylint:disable=W0613
     pass
