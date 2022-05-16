@@ -75,7 +75,7 @@ def valid_user(function):
         userid = kwargs['userid']
         currentuser = flask_login.current_user
         if not currentuser.is_authenticated:
-            return bad(f'login required')
+            return bad('login required')
         if not userid and not currentuser.is_admin:
             return notfound('not accessable')
         if userid and not currentuser.is_admin:
