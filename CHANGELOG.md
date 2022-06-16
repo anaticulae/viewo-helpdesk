@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.1.7
+
+### Fix
+
+* import when required (8f0c206baeb9)
+
+### Documentation
+
+* Happy New Year! (99e8e3d97106)
+
 ## v0.1.6
 
 ### Documentation
