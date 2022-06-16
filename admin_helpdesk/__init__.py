@@ -17,8 +17,6 @@ from admin_helpdesk.config import API_PREFIX
 from admin_helpdesk.config import SECRET_KEY
 from admin_helpdesk.config import board
 from admin_helpdesk.config import configure
-from admin_helpdesk.fixtures import appi
-from admin_helpdesk.fixtures import client
 from admin_helpdesk.message import Dialog
 from admin_helpdesk.message import Dialogs
 from admin_helpdesk.message import Message
