@@ -1,4 +1,4 @@
-# changelog
+# Changelog
 
 Every noteable change is logged here.
 
@@ -64,4 +64,3 @@ Every noteable change is logged here.
 * always login successful (4a4a908a19c6)
 
 ## v0.0.0 Initial release
-
