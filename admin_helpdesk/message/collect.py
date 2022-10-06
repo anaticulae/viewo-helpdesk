@@ -23,6 +23,8 @@ def load_messages(userid: str, date: int) -> 'admin_helpdesk.Messages':
     # remove admin mark to clarify date
     dates = [item.replace('!', '') for item in dates]
     loaded = [load_message(userid, date, msgdate) for msgdate in dates]
+    # sort by date
+    loaded.sort(key=lambda x: x.date)
     return loaded
 
 
