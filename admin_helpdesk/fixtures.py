@@ -14,11 +14,11 @@ import admin_helpdesk.app
 
 
 @pytest.fixture
-def appi(testdir):
+def appi(td):
     """Create and configure a new app instance for each test."""
     # create the app with common test config
     created = admin_helpdesk.app.create(config=dict(
-        ADMIN_HELPDESK=testdir.tmpdir,
+        ADMIN_HELPDESK=td.tmpdir,
         TESTING=True,
     ))
     with created.app_context():
@@ -26,9 +26,9 @@ def appi(testdir):
 
 
 @pytest.fixture
-def client(appi, monkeypatch):  # pylint:disable=W0621
+def client(appi, mp):  # pylint:disable=W0621
     """A test client for the app."""
-    with monkeypatch.context() as context:
+    with mp.context() as context:
 
         def verify_password(user: str, password: str) -> bool:  # pylint:disable=W0613
             return True
