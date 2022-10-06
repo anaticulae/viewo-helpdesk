@@ -14,6 +14,8 @@ import flask_bootstrap
 
 import admin_helpdesk
 import admin_helpdesk.api.auth
+import admin_helpdesk.api.post
+import admin_helpdesk.api.present
 from admin_helpdesk.api import api_auth
 from admin_helpdesk.api import api_message
 from admin_helpdesk.view import *  # pylint:disable=wildcard-import
