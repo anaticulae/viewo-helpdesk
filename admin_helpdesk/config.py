@@ -9,12 +9,13 @@
 
 import os
 
+import configo
 import flask
 
 ADMIN_HELPDESK = 'ADMIN_HELPDESK'
 
-ADMIN_NAME = 'admin'
-ADMIN_PASSWORD = 'secret'
+ADMIN_NAME = configo.env('ADMIN_NAME', default='admin')
+ADMIN_PASSWORD = configo.env('ADMIN_PASSWORD', default='secret')  # nosec
 
 SECRET_KEY = b'helmut_max_power_abs29.nsTODOThisIsVerySecreyISwarTODO'
 
