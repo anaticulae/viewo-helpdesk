@@ -2,6 +2,21 @@
 
 Every noteable change is logged here.
 
+## v0.2.0 (2022-10-06)
+
+### Feature
+
+* make login credentials configurable (ceda1128878d)
+
+### Fix
+
+* add missing import (dd8f52ba370c)
+
+### Chore
+
+* add Jenkinsfile (01ca739b6634)
+* upgrade requirements.txt (bc7f0293e90d)
+
 ## v0.1.7
 
 ### Fix
