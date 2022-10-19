@@ -8,7 +8,6 @@
 # =============================================================================
 
 import dataclasses
-import typing
 
 
 @dataclasses.dataclass
@@ -22,7 +21,7 @@ class Message:
     category: int = None
 
 
-Messages = typing.List[Message]
+Messages = list[Message]
 
 
 @dataclasses.dataclass
@@ -32,4 +31,4 @@ class Dialog:
     title: str = None
 
 
-Dialogs = typing.List[Dialog]
+Dialogs = list[Dialog]
