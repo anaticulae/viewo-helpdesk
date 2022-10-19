@@ -46,3 +46,7 @@ def validate():
     except KeyError:
         utila.error(f'could not start app, define `{ADMIN_HELPDESK}`')
         sys.exit(utila.FAILURE)
+    config = {
+        ADMIN_HELPDESK: os.environ[ADMIN_HELPDESK],
+    }
+    return config
