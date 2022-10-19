@@ -29,7 +29,7 @@ def start_conversion(
     message: admin_helpdesk.message.Message,
     current: int = None,
 ) -> int:
-    current = f'{admin_helpdesk.now()}' if current is None else f'{current}'
+    current = f'{utila.now()}' if current is None else f'{current}'
     outpath = os.path.join(admin_helpdesk.userpath(message.userid), current)
     # start new conversion folder
     os.makedirs(outpath, exist_ok=True)
@@ -40,7 +40,7 @@ def start_conversion(
 
 
 def write_message(message: admin_helpdesk.message.Message, current: int = None):
-    current = f'{admin_helpdesk.now()}' if current is None else f'{current}'
+    current = f'{utila.now()}' if current is None else f'{current}'
     if message.writer is None:
         current = f'{current}!'
     dumped = admin_helpdesk.dump_message(message)

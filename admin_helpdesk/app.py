@@ -7,8 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import time
-
 import flask
 import flask_bootstrap
 
@@ -45,8 +43,3 @@ def create(config=None) -> flask.Flask:
     appi.register_blueprint(api_message, url_prefix=admin_helpdesk.API_PREFIX)
 
     return appi
-
-
-def now():
-    result = int(time.time())
-    return result
