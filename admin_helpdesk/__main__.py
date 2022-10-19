@@ -10,7 +10,11 @@
 import os
 
 import admin_helpdesk.app
+import admin_helpdesk.config
 
-CONFIG = {'ADMIN_HELPDESK': os.environ['ADMIN_HELPDESK']}
+CONFIG = {
+    admin_helpdesk.config.ADMIN_HELPDESK:
+        os.environ[admin_helpdesk.config.ADMIN_HELPDESK]
+}
 
 instance = admin_helpdesk.app.create(CONFIG)  # pylint:disable=C0103
