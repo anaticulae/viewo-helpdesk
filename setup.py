@@ -49,4 +49,7 @@ if __name__ == "__main__":
             'admin_helpdesk.message',
             'admin_helpdesk.view',
         ],
+        entry_points={
+            'console_scripts': ['admin_helpdesk = admin_helpdesk.cli:main'],
+        },
     )
