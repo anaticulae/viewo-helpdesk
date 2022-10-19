@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.3.2 (2022-10-19)
+
+### Fix
+
+* add missing button creator (1e17bf075fc0)
+
+### Chore
+
+* upgrade helpdesk (cc989667b6a5)
+
 ## v0.3.1 (2022-10-19)
 
 ### Fix
