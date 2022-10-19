@@ -12,6 +12,10 @@ import dataclasses
 
 @dataclasses.dataclass
 class Message:
+    """\
+    >>> Message()
+    Message(...)
+    """
     parent: int = None
     userid: str = None
     date: int = None
