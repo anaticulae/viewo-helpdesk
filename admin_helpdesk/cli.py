@@ -69,6 +69,8 @@ def eval_cli():
 
 
 def create_app():
+    import admin_helpdesk.config
+    admin_helpdesk.config.validate()
     import admin_helpdesk.app
     result = admin_helpdesk.app.create()
     return result

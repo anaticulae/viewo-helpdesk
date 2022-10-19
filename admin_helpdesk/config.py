@@ -8,9 +8,11 @@
 # =============================================================================
 
 import os
+import sys
 
 import configo
 import flask
+import utila
 
 ADMIN_HELPDESK = 'ADMIN_HELPDESK'
 
@@ -36,3 +38,11 @@ def board() -> str:
 
 def configure(path):
     flask.current_app.config[ADMIN_HELPDESK] = path
+
+
+def validate():
+    try:
+        _ = os.environ[ADMIN_HELPDESK]
+    except KeyError:
+        utila.error(f'could not start app, define `{ADMIN_HELPDESK}`')
+        sys.exit(utila.FAILURE)
