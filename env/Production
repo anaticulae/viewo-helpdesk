@@ -9,7 +9,7 @@
 
 FROM 169.254.149.20:6001/arch_python:0.14.0
 
-RUN pip install "admin_helpdesk==0.3.1"
+RUN pip install "admin_helpdesk==0.3.2"
 
 VOLUME /var/admin_helpdesk
 
