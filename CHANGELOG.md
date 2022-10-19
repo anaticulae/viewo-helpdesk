@@ -2,6 +2,19 @@
 
 Every noteable change is logged here.
 
+## v0.3.0 (2022-10-19)
+
+### Feature
+
+* ensure that working path is defined (27793426014f)
+* add cli to run application (a187c656b706)
+
+### Chore
+
+* add docker env (4f0b7001ffd1)
+* upgrade requirements.txt (0525c9f70fd8)
+* adjust environment (2069ee47ea2e)
+
 ## v0.2.0 (2022-10-06)
 
 ### Feature
