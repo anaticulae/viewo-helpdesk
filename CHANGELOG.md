@@ -2,6 +2,19 @@
 
 Every noteable change is logged here.
 
+## v0.3.1 (2022-10-19)
+
+### Fix
+
+* add missing config (b551c11ec2db)
+* adjust version (52c1849d2668)
+
+### Chore
+
+* upgrade helpdesk (b2ba78d48ee4)
+* adjust Production runner (b8e7f12e5d11)
+* add execution flag (717ea1bdca2a)
+
 ## v0.3.0 (2022-10-19)
 
 ### Feature
