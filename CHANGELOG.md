@@ -2,6 +2,19 @@
 
 Every noteable change is logged here.
 
+## v0.3.3 (2023-01-04)
+
+### Documentation
+
+* happy New Year! (d9caa6b8013f)
+
+### Chore
+
+* make requirements less strict (bdac72c09558)
+* use quick install (181503ec67ca)
+* upgrade requirements.txt (dde17263519d)
+* upgrade pipeline (8b3117f3c7b5)
+
 ## v0.3.2 (2022-10-19)
 
 ### Fix
