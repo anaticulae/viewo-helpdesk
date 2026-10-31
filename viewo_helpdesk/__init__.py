@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import importlib.metadata
 import os
 
 import utilo
@@ -32,6 +33,6 @@ from viewo_helpdesk.message.collect import valid_user
 from viewo_helpdesk.message.path import userpath
 from viewo_helpdesk.message.serialize import dump_message
 
-__version__ = '0.3.3'
+__version__ = importlib.metadata.version('viewo-helpdesk')
 
 ROOT = os.path.abspath(utilo.join(os.path.dirname(__file__), '..'))
