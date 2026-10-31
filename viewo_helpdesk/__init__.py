@@ -9,7 +9,7 @@
 
 import os
 
-from utilo import now  # TODO: REMOVE LATER
+import utilo
 
 import viewo_helpdesk.__patch__
 from viewo_helpdesk.api import api_call
@@ -34,4 +34,4 @@ from viewo_helpdesk.message.serialize import dump_message
 
 __version__ = '0.3.3'
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+ROOT = os.path.abspath(utilo.join(os.path.dirname(__file__), '..'))

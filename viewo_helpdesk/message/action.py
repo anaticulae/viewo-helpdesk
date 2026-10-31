@@ -30,10 +30,10 @@ def start_conversion(
     current: int = None,
 ) -> int:
     current = f'{utilo.now()}' if current is None else f'{current}'
-    outpath = os.path.join(viewo_helpdesk.userpath(message.userid), current)
+    outpath = utilo.join(viewo_helpdesk.userpath(message.userid), current)
     # start new conversion folder
     os.makedirs(outpath, exist_ok=True)
-    first_message = os.path.join(outpath, current)
+    first_message = utilo.join(outpath, current)
     dumped = viewo_helpdesk.dump_message(message)
     utilo.file_create(first_message, dumped)
     return current
@@ -44,7 +44,7 @@ def write_message(message: viewo_helpdesk.message.Message, current: int = None):
     if message.writer is None:
         current = f'{current}!'
     dumped = viewo_helpdesk.dump_message(message)
-    outpath = os.path.join(
+    outpath = utilo.join(
         viewo_helpdesk.userpath(message.userid),
         f'{message.parent}',
         current,

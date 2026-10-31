@@ -7,11 +7,11 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import os
+import utilo
 
 import viewo_helpdesk
 
 
 def userpath(userid: str) -> str:
-    result = os.path.join(viewo_helpdesk.board(), userid)
+    result = utilo.join(viewo_helpdesk.board(), userid)
     return result
