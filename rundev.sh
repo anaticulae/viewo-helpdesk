@@ -1,5 +1,7 @@
 #! /usr/bin/bash
 
+export ADMIN_HELPDESK="${SHARED_SPACE:-$HOME/.tmp/viewo/admin_helpdesk}"
+
 export FLASK_APP=admin_helpdesk/__main__.py
 export FLASK_ENV=development
 
