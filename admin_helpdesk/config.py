@@ -10,14 +10,14 @@
 import os
 import sys
 
-import configo
+import configos
 import flask
-import utila
+import utilo
 
 ADMIN_HELPDESK = 'ADMIN_HELPDESK'
 
-ADMIN_NAME = configo.env('ADMIN_NAME', default='admin')
-ADMIN_PASSWORD = configo.env('ADMIN_PASSWORD', default='secret')  # nosec
+ADMIN_NAME = configos.env('ADMIN_NAME', default='admin')
+ADMIN_PASSWORD = configos.env('ADMIN_PASSWORD', default='secret')  # nosec
 
 SECRET_KEY = b'helmut_max_power_abs29.nsTODOThisIsVerySecreyISwarTODO'
 
@@ -44,8 +44,8 @@ def validate():
     try:
         _ = os.environ[ADMIN_HELPDESK]
     except KeyError:
-        utila.error(f'could not start app, define `{ADMIN_HELPDESK}`')
-        sys.exit(utila.FAILURE)
+        utilo.error(f'could not start app, define `{ADMIN_HELPDESK}`')
+        sys.exit(utilo.FAILURE)
     config = {
         ADMIN_HELPDESK: os.environ[ADMIN_HELPDESK],
     }

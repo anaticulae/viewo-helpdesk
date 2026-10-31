@@ -7,14 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 import tests
 
 
 def test_message_present(client_single):
     tests.login(client_single)
-    messages = utilatest.apicall(
+    messages = utilotest.apicall(
         client_single,
         f'/dialog/{tests.TESTUSER}/{tests.TESTDATE}',
     )

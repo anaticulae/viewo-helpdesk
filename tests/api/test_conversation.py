@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 import tests
 
@@ -39,9 +39,9 @@ def test_have_conversation(client):
             text='Haben Sie vielen Dank!',
             parent=parent,
         )
-        dialog = utilatest.apicall(client, f'/dialog/{tests.TESTUSER}/{parent}')
+        dialog = utilotest.apicall(client, f'/dialog/{tests.TESTUSER}/{parent}')
     assert len(dialog['messages']) == 3
 
     with tests.session_admin(client):
-        userdialogs = utilatest.apicall(client, f'/dialogs/{tests.TESTUSER}')
+        userdialogs = utilotest.apicall(client, f'/dialogs/{tests.TESTUSER}')
     assert len(userdialogs['dialogs']) == 1

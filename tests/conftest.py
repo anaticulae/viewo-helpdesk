@@ -8,9 +8,9 @@
 # =============================================================================
 
 # pylint:disable=W0611
-import utilatest
-from utilatest import mp
-from utilatest import td
+import utilotest
+from utilotest import mp
+from utilotest import td
 
 import admin_helpdesk.config
 from admin_helpdesk.fixtures import appi
@@ -19,4 +19,4 @@ from tests.fixtures import client_single
 
 pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
 
-utilatest.setup(admin_helpdesk.config.API_PREFIX)
+utilotest.setup(admin_helpdesk.config.API_PREFIX)

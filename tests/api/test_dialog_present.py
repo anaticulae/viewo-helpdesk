@@ -9,7 +9,7 @@
 
 import http
 
-import utilatest
+import utilotest
 
 import admin_helpdesk.api.auth
 import tests
@@ -17,13 +17,13 @@ import tests
 
 def test_dialog_list_admin(client_single):
     tests.login_admin(client_single)
-    dialogs = utilatest.apicall(client_single, '/dialogs')
+    dialogs = utilotest.apicall(client_single, '/dialogs')
     assert dialogs['dialogs'][0]['userid'] == tests.TESTUSER
 
 
 def test_dialog_list_user(client_single):
     tests.login(client_single)
-    dialogs = utilatest.apicall(
+    dialogs = utilotest.apicall(
         client_single,
         '/dialogs',
         expected=http.HTTPStatus.UNAUTHORIZED,

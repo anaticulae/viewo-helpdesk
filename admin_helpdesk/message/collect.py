@@ -9,7 +9,7 @@
 
 import os
 
-import utila
+import utilo
 
 import admin_helpdesk
 import admin_helpdesk.config
@@ -19,7 +19,7 @@ def load_messages(userid: str, date: int) -> 'admin_helpdesk.Messages':
     date = f'{date}'
     board = admin_helpdesk.board()
     path = os.path.join(board, userid, date)
-    dates = utila.file_list(path)
+    dates = utilo.file_list(path)
     # remove admin mark to clarify date
     dates = [item.replace('!', '') for item in dates]
     loaded = [load_message(userid, date, msgdate) for msgdate in dates]
@@ -50,7 +50,7 @@ def load_message(
     else:
         # admin message
         path = os.path.join(path, f'{date}!')
-    message_raw = utila.file_read(path)
+    message_raw = utilo.file_read(path)
     title, text = message_raw.split('\n\n', maxsplit=1)
     if title != 'None':
         message.title = title
@@ -61,9 +61,9 @@ def load_message(
 def load_dialogs(user: str = None) -> 'admin_helpdesk.Dialogs':
     board = admin_helpdesk.board()
     result = []
-    users = utila.directory_list(board) if user is None else [user]  # pylint:disable=E1101
+    users = utilo.directory_list(board) if user is None else [user]  # pylint:disable=E1101
     for userid in users:
-        dialogs = utila.directory_list(os.path.join(board, userid))  # pylint:disable=E1101
+        dialogs = utilo.directory_list(os.path.join(board, userid))  # pylint:disable=E1101
         for dialog in dialogs:
             dialog = int(dialog)
             title = load_message(userid, dialog, dialog).title
@@ -78,7 +78,7 @@ def load_dialogs(user: str = None) -> 'admin_helpdesk.Dialogs':
 
 def load_users() -> list:
     board = admin_helpdesk.board()
-    users = utila.file_list(board)
+    users = utilo.file_list(board)
     return users
 
 

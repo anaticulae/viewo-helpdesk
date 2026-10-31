@@ -12,7 +12,7 @@ import http
 
 import flask
 import flask_login
-import utila
+import utilo
 
 import admin_helpdesk
 import admin_helpdesk.config
@@ -26,7 +26,7 @@ __all__ = ['api_auth', 'api_message', 'auth', 'delete', 'post', 'present']
 def dump(data, name='', uri='') -> str:
     uri = uri if uri else flask.request.path
     name = name if name else 'data'
-    data = utila.simplify(data)  # pylint:disable=E1101
+    data = utilo.simplify(data)  # pylint:disable=E1101
     connected = {'uri': uri, name: data}
     json = flask.jsonify(connected)
     return json

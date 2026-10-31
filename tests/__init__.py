@@ -10,7 +10,7 @@
 import contextlib
 import time
 
-import utilatest
+import utilotest
 
 import admin_helpdesk
 import admin_helpdesk.config
@@ -32,16 +32,19 @@ def sleep():
 
 
 def login(client, userid=TESTUSER, password=TESTPASSWORD):
-    result = utilatest.apipost(
+    result = utilotest.apipost(
         client,
         '/auth',
-        dict(user=userid, password=password),
+        {
+            'user': userid,
+            'password': password,
+        },
     )
     assert 'DONE' in result or 'link' in str(result)
 
 
 def logout(client):
-    result = utilatest.apicall(client, '/logout')
+    result = utilotest.apicall(client, '/logout')
     assert 'DONE' in result
 
 
@@ -75,7 +78,7 @@ def send_message(client, userid, text, title=None, parent=None, category=10):
         'parent': parent,
         'category': category,
     }
-    result = utilatest.apipost(client, '/dialog/add', data)
+    result = utilotest.apipost(client, '/dialog/add', data)
     return result
 
 
