@@ -9,12 +9,18 @@
 
 import os
 
+import utilo
+
+import admin_helpdesk
 import admin_helpdesk.app
 import admin_helpdesk.config
 
 CONFIG = {
     admin_helpdesk.config.VIEWO_HELPDESK:
-        os.environ[admin_helpdesk.config.VIEWO_HELPDESK]
+        os.environ.get(
+            admin_helpdesk.config.VIEWO_HELPDESK,
+            utilo.join(utilo.tmpdir(admin_helpdesk.ROOT), 'viewo_helpdesk'),
+        )
 }
 
 instance = admin_helpdesk.app.create(CONFIG)  # pylint:disable=C0103
