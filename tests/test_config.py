@@ -9,10 +9,10 @@
 
 import pytest
 
-import admin_helpdesk.config
+import viewo_helpdesk.config
 
 
 @pytest.mark.usefixtures('appi')
 def test_access_root():
-    root = admin_helpdesk.config.helpdesk()
+    root = viewo_helpdesk.config.helpdesk()
     assert root

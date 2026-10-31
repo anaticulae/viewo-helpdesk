@@ -11,8 +11,8 @@ import http
 
 import utilotest
 
-import admin_helpdesk.api.auth
 import tests
+import viewo_helpdesk.api.auth
 
 
 def test_dialog_list_admin(client_single):
@@ -28,4 +28,4 @@ def test_dialog_list_user(client_single):
         '/dialogs',
         expected=http.HTTPStatus.UNAUTHORIZED,
     )
-    assert dialogs == admin_helpdesk.api.auth.NO_ACCESS
+    assert dialogs == viewo_helpdesk.api.auth.NO_ACCESS

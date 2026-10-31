@@ -7,37 +7,37 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import admin_helpdesk
-import admin_helpdesk.api
-import admin_helpdesk.api.auth
+import viewo_helpdesk
+import viewo_helpdesk.api
+import viewo_helpdesk.api.auth
 
 
-@admin_helpdesk.api.api_message.route(
+@viewo_helpdesk.api.api_message.route(
     '/dialogs/<string(length=16):userid>',
     methods=['GET'],
 )
-@admin_helpdesk.api.valid_user
+@viewo_helpdesk.api.valid_user
 def dialogs(userid):
-    result = admin_helpdesk.load_dialogs(userid)
-    dumped = admin_helpdesk.api.dump(result, 'dialogs')
+    result = viewo_helpdesk.load_dialogs(userid)
+    dumped = viewo_helpdesk.api.dump(result, 'dialogs')
     return dumped
 
 
-@admin_helpdesk.api.api_message.route('/dialogs', methods=['GET'])
-@admin_helpdesk.api.auth.admin_required
+@viewo_helpdesk.api.api_message.route('/dialogs', methods=['GET'])
+@viewo_helpdesk.api.auth.admin_required
 def get_dialog():
-    result = admin_helpdesk.load_dialogs()
-    dumped = admin_helpdesk.api.dump(result, 'dialogs')
+    result = viewo_helpdesk.load_dialogs()
+    dumped = viewo_helpdesk.api.dump(result, 'dialogs')
     return dumped
 
 
-@admin_helpdesk.api.api_message.route(
+@viewo_helpdesk.api.api_message.route(
     '/dialog/<string(length=16):userid>/<int:date>',
     methods=['GET'],
 )
-@admin_helpdesk.api.valid_user
-@admin_helpdesk.api.valid_dialog
+@viewo_helpdesk.api.valid_user
+@viewo_helpdesk.api.valid_dialog
 def dialog_get(userid: str, date: int):
-    messages = admin_helpdesk.load_messages(userid, date)
-    dumped = admin_helpdesk.api.dump(messages, 'messages')
+    messages = viewo_helpdesk.load_messages(userid, date)
+    dumped = viewo_helpdesk.api.dump(messages, 'messages')
     return dumped

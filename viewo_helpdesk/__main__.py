@@ -7,9 +7,20 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import admin_helpdesk.message
+import os
 
+import utilo
 
-def dump_message(message: admin_helpdesk.message.Message) -> str:
-    raw = f'{message.title}\n\n{message.text}'
-    return raw
+import viewo_helpdesk
+import viewo_helpdesk.app
+import viewo_helpdesk.config
+
+CONFIG = {
+    viewo_helpdesk.config.VIEWO_HELPDESK:
+        os.environ.get(
+            viewo_helpdesk.config.VIEWO_HELPDESK,
+            utilo.join(utilo.tmpdir(viewo_helpdesk.ROOT), 'viewo_helpdesk'),
+        )
+}
+
+instance = viewo_helpdesk.app.create(CONFIG)  # pylint:disable=C0103

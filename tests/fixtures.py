@@ -10,7 +10,7 @@
 import pytest
 
 import tests
-from admin_helpdesk.fixtures import client  # pylint:disable=W0611
+from viewo_helpdesk.fixtures import client  # pylint:disable=W0611
 
 
 @pytest.fixture

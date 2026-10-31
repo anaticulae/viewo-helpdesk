@@ -12,12 +12,12 @@ import time
 
 import utilotest
 
-import admin_helpdesk
-import admin_helpdesk.config
+import viewo_helpdesk
+import viewo_helpdesk.config
 
 TESTUSER = 'abcdefghabcdefgh'
 TESTPASSWORD = '88888891'
-TESTMESSAGE = admin_helpdesk.Message(
+TESTMESSAGE = viewo_helpdesk.Message(
     userid=TESTUSER,
     title='Problem beim Bezahlen',
     text='Ich habe Probleme beim Bezahlen!\nAchtung!\nHilfe!\nSchnell!',
@@ -51,8 +51,8 @@ def logout(client):
 def login_admin(client):
     login(
         client,
-        userid=admin_helpdesk.config.ADMIN_NAME,
-        password=admin_helpdesk.config.ADMIN_PASSWORD,
+        userid=viewo_helpdesk.config.ADMIN_NAME,
+        password=viewo_helpdesk.config.ADMIN_PASSWORD,
     )
 
 
@@ -84,23 +84,23 @@ def send_message(client, userid, text, title=None, parent=None, category=10):
 
 def create_single_sample():
     # user starts issue
-    created = admin_helpdesk.start_conversion(TESTMESSAGE, current=NOW)
+    created = viewo_helpdesk.start_conversion(TESTMESSAGE, current=NOW)
     assert created
 
     # we reply gently
-    answer = admin_helpdesk.Message(
+    answer = viewo_helpdesk.Message(
         parent=created,
         userid=TESTUSER,
         text='Haben Sie nicht genug in der Portokasse?',
     )
-    admin_helpdesk.write_message(answer, current=NOW + 1)
+    viewo_helpdesk.write_message(answer, current=NOW + 1)
 
     # this user is very happy
-    money = admin_helpdesk.Message(
+    money = viewo_helpdesk.Message(
         parent=created,
         userid=TESTUSER,
         writer=TESTUSER,
         text='Nein, die Box ist voll!',
     )
-    admin_helpdesk.write_message(money, current=NOW + 2)
+    viewo_helpdesk.write_message(money, current=NOW + 2)
     return created

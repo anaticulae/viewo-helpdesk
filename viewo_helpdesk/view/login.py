@@ -10,11 +10,11 @@
 import flask
 import flask_login
 
-import admin_helpdesk.api.auth
-import admin_helpdesk.view
+import viewo_helpdesk.api.auth
+import viewo_helpdesk.view
 
 
-@admin_helpdesk.view.view_login.route('/admin/login')
+@viewo_helpdesk.view.view_login.route('/admin/login')
 def login_show():
     """Route public pages which are visible without any permissions."""
     if flask_login.current_user.get_id() is not None:
@@ -22,10 +22,10 @@ def login_show():
     return flask.render_template('login.html')
 
 
-@admin_helpdesk.view.view_login.route('/admin/login', methods=['POST'])
+@viewo_helpdesk.view.view_login.route('/admin/login', methods=['POST'])
 def login_check():
     user = flask.request.form.get('user', None)
     password = flask.request.form.get('password', None)
-    if not admin_helpdesk.api.auth.login(user, password):
+    if not viewo_helpdesk.api.auth.login(user, password):
         return flask.render_template('login.html')
     return flask.redirect(flask.url_for('view_admin.messages_list'))

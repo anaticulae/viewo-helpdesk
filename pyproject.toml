@@ -45,7 +45,7 @@ Homepage = "https://github.com/anaticulae/viewo-helpdesk"
 Repository = "https://github.com/anaticulae/viewo-helpdesk"
 
 [project.scripts]
-admin_helpdesk = "admin_helpdesk.cli:main"
+viewo_helpdesk = "viewo_helpdesk.cli:main"
 
 [tool.semantic_release]
 version_toml = [
@@ -80,10 +80,10 @@ where = [
     ".",
 ]
 include = [
-    "admin_helpdesk",
-    "admin_helpdesk.api",
-    "admin_helpdesk.message",
-    "admin_helpdesk.view",
+    "viewo_helpdesk",
+    "viewo_helpdesk.api",
+    "viewo_helpdesk.message",
+    "viewo_helpdesk.view",
 ]
 exclude = [
     "tests*",

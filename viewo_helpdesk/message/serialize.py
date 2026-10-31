@@ -7,11 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import os
-
-import admin_helpdesk
+import viewo_helpdesk.message
 
 
-def userpath(userid: str) -> str:
-    result = os.path.join(admin_helpdesk.board(), userid)
-    return result
+def dump_message(message: viewo_helpdesk.message.Message) -> str:
+    raw = f'{message.title}\n\n{message.text}'
+    return raw

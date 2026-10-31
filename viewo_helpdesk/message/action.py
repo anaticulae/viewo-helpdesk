@@ -11,10 +11,10 @@ import os
 
 import utilo
 
-import admin_helpdesk
-import admin_helpdesk.message
-import admin_helpdesk.message.path
-import admin_helpdesk.message.serialize
+import viewo_helpdesk
+import viewo_helpdesk.message
+import viewo_helpdesk.message.path
+import viewo_helpdesk.message.serialize
 
 
 def delete_message(userid: str, date: int):  # pylint:disable=W0613
@@ -26,26 +26,26 @@ def delete_history(userid: str):  # pylint:disable=W0613
 
 
 def start_conversion(
-    message: admin_helpdesk.message.Message,
+    message: viewo_helpdesk.message.Message,
     current: int = None,
 ) -> int:
     current = f'{utilo.now()}' if current is None else f'{current}'
-    outpath = os.path.join(admin_helpdesk.userpath(message.userid), current)
+    outpath = os.path.join(viewo_helpdesk.userpath(message.userid), current)
     # start new conversion folder
     os.makedirs(outpath, exist_ok=True)
     first_message = os.path.join(outpath, current)
-    dumped = admin_helpdesk.dump_message(message)
+    dumped = viewo_helpdesk.dump_message(message)
     utilo.file_create(first_message, dumped)
     return current
 
 
-def write_message(message: admin_helpdesk.message.Message, current: int = None):
+def write_message(message: viewo_helpdesk.message.Message, current: int = None):
     current = f'{utilo.now()}' if current is None else f'{current}'
     if message.writer is None:
         current = f'{current}!'
-    dumped = admin_helpdesk.dump_message(message)
+    dumped = viewo_helpdesk.dump_message(message)
     outpath = os.path.join(
-        admin_helpdesk.userpath(message.userid),
+        viewo_helpdesk.userpath(message.userid),
         f'{message.parent}',
         current,
     )
