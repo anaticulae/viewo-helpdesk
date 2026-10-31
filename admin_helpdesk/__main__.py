@@ -13,8 +13,8 @@ import admin_helpdesk.app
 import admin_helpdesk.config
 
 CONFIG = {
-    admin_helpdesk.config.ADMIN_HELPDESK:
-        os.environ[admin_helpdesk.config.ADMIN_HELPDESK]
+    admin_helpdesk.config.VIEWO_HELPDESK:
+        os.environ[admin_helpdesk.config.VIEWO_HELPDESK]
 }
 
 instance = admin_helpdesk.app.create(CONFIG)  # pylint:disable=C0103

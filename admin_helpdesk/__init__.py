@@ -13,9 +13,9 @@ from utilo import now  # TODO: REMOVE LATER
 
 import admin_helpdesk.__patch__
 from admin_helpdesk.api import api_call
-from admin_helpdesk.config import ADMIN_HELPDESK
 from admin_helpdesk.config import API_PREFIX
 from admin_helpdesk.config import SECRET_KEY
+from admin_helpdesk.config import VIEWO_HELPDESK
 from admin_helpdesk.config import board
 from admin_helpdesk.config import configure
 from admin_helpdesk.message import Dialog

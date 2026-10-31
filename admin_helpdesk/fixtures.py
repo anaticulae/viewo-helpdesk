@@ -18,7 +18,7 @@ def appi(td):
     """Create and configure a new app instance for each test."""
     # create the app with common test config
     created = admin_helpdesk.app.create(config={
-        'ADMIN_HELPDESK': td.tmpdir,
+        'VIEWO_HELPDESK': td.tmpdir,
         'TESTING': True,
     })
     with created.app_context():
