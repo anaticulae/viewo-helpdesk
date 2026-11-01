@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.1 (2026-11-01)
+
+### Chores
+
+- **make**: Simplify code
+  ([`9100cf4`](https://github.com/anaticulae/viewo-helpdesk/commit/9100cf482b82225c9dc9747fe6a1bd886f0d2777))
+
+
 ## v1.0.0 (2026-11-01)
 
 ### Chores
