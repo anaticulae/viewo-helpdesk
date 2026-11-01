@@ -1,130 +1,369 @@
-# Changelog
+# CHANGELOG
 
-Every noteable change is logged here.
+
+## v1.0.0 (2026-11-01)
+
+### Chores
+
+- **github**: Add .github
+  ([`9f4a3e6`](https://github.com/anaticulae/viewo-helpdesk/commit/9f4a3e69d08d426d6ae72d36911920f28e6d6969))
+
+- **license**: Add missing LICENSE
+  ([`5b419c8`](https://github.com/anaticulae/viewo-helpdesk/commit/5b419c8dd073c37823bd94bfe4f4101332ceed82))
+
+- **make**: Add missing env
+  ([`83deea8`](https://github.com/anaticulae/viewo-helpdesk/commit/83deea8dd0fdbcd70561bb203aec232bcef34e5c))
+
+- **make**: Make runnable
+  ([`74eae63`](https://github.com/anaticulae/viewo-helpdesk/commit/74eae6397f88d0398a1664dd1defe39cb8fe64af))
+
+- **packages**: Adjust naming
+  ([`d0919bd`](https://github.com/anaticulae/viewo-helpdesk/commit/d0919bdcff24712960947d7e041520c0fe78cc2d))
+
+- **pyproject**: Add modern layout
+  ([`80c6d5f`](https://github.com/anaticulae/viewo-helpdesk/commit/80c6d5f0158a5b9645183c24c2bd230c4e12a58f))
+
+- **pyproject**: Remove outdated files
+  ([`73eb5d4`](https://github.com/anaticulae/viewo-helpdesk/commit/73eb5d4e439acfeba7538f6231fcb6b94df99d55))
+
+- **pyproject**: Upgrade bootstrap
+  ([`a92b11b`](https://github.com/anaticulae/viewo-helpdesk/commit/a92b11b4dfa70d068c62d0032c1b238fcc287cd0))
+
+- **readme**: Adjust file names
+  ([`c0efc98`](https://github.com/anaticulae/viewo-helpdesk/commit/c0efc98cce73642ca984695fb0968268ce817872))
+
+### Features
+
+- **env**: Add default storing location
+  ([`10ed3f2`](https://github.com/anaticulae/viewo-helpdesk/commit/10ed3f26763b4b164472306b0e47b3ab8b80fefd))
+
+### Refactoring
+
+- **packages**: Adjust naming
+  ([`d2adee0`](https://github.com/anaticulae/viewo-helpdesk/commit/d2adee03bb4b4a14e8b11817b25f9ed19f9d3402))
+
+- **pyproject**: Use dynamic version
+  ([`3a28e6b`](https://github.com/anaticulae/viewo-helpdesk/commit/3a28e6b9e6ff491c3ea5a98cde376dce69d00c70))
+
+- **rename**: Adjust global var
+  ([`f2f77d2`](https://github.com/anaticulae/viewo-helpdesk/commit/f2f77d2c3683cef253a85b4421bd1de8f07e8f36))
+
+- **utilo**: Replace with utilo code
+  ([`69fee5f`](https://github.com/anaticulae/viewo-helpdesk/commit/69fee5f051494871ccd3f54646fb898a0d887358))
+
+### Testing
+
+- **login**: Verify login view
+  ([`04278f2`](https://github.com/anaticulae/viewo-helpdesk/commit/04278f29aeb649444601acddff6cd593973b1d70))
+
 
 ## v0.3.3 (2023-01-04)
 
+### Chores
+
+- **Jenkins**: Upgrade pipeline
+  ([`8b3117f`](https://github.com/anaticulae/viewo-helpdesk/commit/8b3117f3c7b521c6e2cff95aa394a35038ff069a))
+
+- **requirements**: Make requirements less strict
+  ([`bdac72c`](https://github.com/anaticulae/viewo-helpdesk/commit/bdac72c09558271d34a6fe7fd1f74d75b36211ef))
+
+- **requirements**: Upgrade requirements.txt
+  ([`dde1726`](https://github.com/anaticulae/viewo-helpdesk/commit/dde17263519dc23162c737a1246e11886ca08e50))
+
+- **setup**: Use quick install
+  ([`181503e`](https://github.com/anaticulae/viewo-helpdesk/commit/181503ec67ca9551f302d549756e8c3750951615))
+
+### Code Style
+
+- **baw**: Add header
+  ([`eb4d150`](https://github.com/anaticulae/viewo-helpdesk/commit/eb4d1504661ec1a8e41a666be93536dc6feddab7))
+
 ### Documentation
 
-* happy New Year! (d9caa6b8013f)
+- **copyright**: Happy New Year!
+  ([`d9caa6b`](https://github.com/anaticulae/viewo-helpdesk/commit/d9caa6b8013f0c8c89382848627123cb4097284d))
 
-### Chore
-
-* make requirements less strict (bdac72c09558)
-* use quick install (181503ec67ca)
-* upgrade requirements.txt (dde17263519d)
-* upgrade pipeline (8b3117f3c7b5)
 
 ## v0.3.2 (2022-10-19)
 
-### Fix
+### Bug Fixes
 
-* add missing button creator (1e17bf075fc0)
+- **login**: Add missing button creator
+  ([`1e17bf0`](https://github.com/anaticulae/viewo-helpdesk/commit/1e17bf075fc03450d0eacdf83a1ab9d9eeb6edbe))
 
-### Chore
+### Chores
 
-* upgrade helpdesk (cc989667b6a5)
+- **Production**: Upgrade helpdesk
+  ([`cc98966`](https://github.com/anaticulae/viewo-helpdesk/commit/cc989667b6a525ad1f7d49c3874570e8d8e10f38))
+
 
 ## v0.3.1 (2022-10-19)
 
-### Fix
+### Bug Fixes
 
-* add missing config (b551c11ec2db)
-* adjust version (52c1849d2668)
+- **build**: Adjust version
+  ([`52c1849`](https://github.com/anaticulae/viewo-helpdesk/commit/52c1849d2668d4e538a6825f0db54fd9d9704f93))
 
-### Chore
+- **cli**: Add missing config
+  ([`b551c11`](https://github.com/anaticulae/viewo-helpdesk/commit/b551c11ec2dbd8b61c37298c05a4833737ed55d7))
 
-* upgrade helpdesk (b2ba78d48ee4)
-* adjust Production runner (b8e7f12e5d11)
-* add execution flag (717ea1bdca2a)
+### Chores
+
+- **build**: Add execution flag
+  ([`717ea1b`](https://github.com/anaticulae/viewo-helpdesk/commit/717ea1bdca2a2e398a70dd10ee345cd87c7c6ea5))
+
+- **fix**: Adjust Production runner
+  ([`b8e7f12`](https://github.com/anaticulae/viewo-helpdesk/commit/b8e7f12e5d1188803da917cc1d4b0f44c748892a))
+
+- **Production**: Upgrade helpdesk
+  ([`b2ba78d`](https://github.com/anaticulae/viewo-helpdesk/commit/b2ba78d48ee4be240062a5837f9f3e680abffc89))
+
+### Refactoring
+
+- **env**: Move to correct path
+  ([`0ff2bb7`](https://github.com/anaticulae/viewo-helpdesk/commit/0ff2bb79cb96f3d85f77ae0210c5025879b09d4b))
+
 
 ## v0.3.0 (2022-10-19)
 
-### Feature
+### Chores
 
-* ensure that working path is defined (27793426014f)
-* add cli to run application (a187c656b706)
+- **Jenkins**: Adjust environment
+  ([`2069ee4`](https://github.com/anaticulae/viewo-helpdesk/commit/2069ee47ea2ed18ff47886363e4523eefb220489))
 
-### Chore
+- **Production**: Add docker env
+  ([`4f0b700`](https://github.com/anaticulae/viewo-helpdesk/commit/4f0b7001ffd16773e8685cbcd55f7a89f3e41402))
 
-* add docker env (4f0b7001ffd1)
-* upgrade requirements.txt (0525c9f70fd8)
-* adjust environment (2069ee47ea2e)
+- **requirements**: Upgrade requirements.txt
+  ([`0525c9f`](https://github.com/anaticulae/viewo-helpdesk/commit/0525c9f70fd86420968ce2831e47a28ef65f01df))
+
+### Features
+
+- **cli**: Add cli to run application
+  ([`a187c65`](https://github.com/anaticulae/viewo-helpdesk/commit/a187c656b7064c05c4529d79db297c4e67dc46b5))
+
+- **config**: Ensure that working path is defined
+  ([`2779342`](https://github.com/anaticulae/viewo-helpdesk/commit/27793426014f555d54be853f90f6fb81423e36ab))
+
+### Refactoring
+
+- **config**: Clarify code
+  ([`0ba90f9`](https://github.com/anaticulae/viewo-helpdesk/commit/0ba90f9a322ebe47f089e5f76bc9a3b12ff4ee73))
+
+- **date**: Replace with utila code
+  ([`7015c9b`](https://github.com/anaticulae/viewo-helpdesk/commit/7015c9b13cd83000b316d59dbda64b6d6782123b))
+
+### Testing
+
+- **message**: Run doctest to increase coverage
+  ([`8c2d897`](https://github.com/anaticulae/viewo-helpdesk/commit/8c2d8978980b93369823726e4f4ecdfc70148411))
+
 
 ## v0.2.0 (2022-10-06)
 
-### Feature
+### Bug Fixes
 
-* make login credentials configurable (ceda1128878d)
+- **app**: Add missing import
+  ([`dd8f52b`](https://github.com/anaticulae/viewo-helpdesk/commit/dd8f52ba370cd58ee057a7c6f93e446cdc8b8736))
 
-### Fix
+### Chores
 
-* add missing import (dd8f52ba370c)
+- **Jenkinsfile**: Add Jenkinsfile
+  ([`01ca739`](https://github.com/anaticulae/viewo-helpdesk/commit/01ca739b6634f455213d20814daee2a66583bdfc))
 
-### Chore
+- **requirements**: Upgrade requirements.txt
+  ([`bc7f029`](https://github.com/anaticulae/viewo-helpdesk/commit/bc7f0293e90daef573b9ad4cd3ee43a700b2b7ca))
 
-* add Jenkinsfile (01ca739b6634)
-* upgrade requirements.txt (bc7f0293e90d)
+### Code Style
 
-## v0.1.7
+- **changelog**: Adjust automation tool
+  ([`42bf3b5`](https://github.com/anaticulae/viewo-helpdesk/commit/42bf3b506ee992aa8a6dc846c3913893557c2f3e))
 
-### Fix
+### Features
 
-* import when required (8f0c206baeb9)
+- **config**: Make login credentials configurable
+  ([`ceda112`](https://github.com/anaticulae/viewo-helpdesk/commit/ceda1128878dd377f172b0e8d019560dbe6a4872))
+
+### Testing
+
+- **api**: Add missing package file
+  ([`69105e9`](https://github.com/anaticulae/viewo-helpdesk/commit/69105e9103fd1e26c47fb0ebc178d62aabcaa565))
+
+- **refactor**: Use fixture shortcuts
+  ([`fadecdd`](https://github.com/anaticulae/viewo-helpdesk/commit/fadecdd2273f985545db3ca70a4ee3ff9311ae9a))
+
+
+## v0.1.7 (2022-06-16)
+
+### Bug Fixes
+
+- **API**: Import when required
+  ([`8f0c206`](https://github.com/anaticulae/viewo-helpdesk/commit/8f0c206baeb98b3cdddb342fe224d7a515184703))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`7e07dd8`](https://github.com/anaticulae/viewo-helpdesk/commit/7e07dd8aca7817c128f3a280dd3e42b55943c6f4))
 
 ### Documentation
 
-* Happy New Year! (99e8e3d97106)
+- **copyright**: Happy New Year!
+  ([`99e8e3d`](https://github.com/anaticulae/viewo-helpdesk/commit/99e8e3d97106afcd9a1ef75855a2facfdafc69d4))
 
-## v0.1.6
+
+## v0.1.6 (2022-05-16)
+
+### Chores
+
+- **config**: Move config file
+  ([`de870d3`](https://github.com/anaticulae/viewo-helpdesk/commit/de870d33613106a1af8ab93aac9320a77932857b))
+
+- **requirements**: Upgrade requirements.txt
+  ([`0eeb3e7`](https://github.com/anaticulae/viewo-helpdesk/commit/0eeb3e7646a51e917490a3e869a9020621002164))
+
+### Code Style
+
+- **format**: Use updated formatter
+  ([`b7e64ae`](https://github.com/anaticulae/viewo-helpdesk/commit/b7e64aeea208b557964ade9d9fbbb786c9e8e5f1))
 
 ### Documentation
 
-* adjust modules path (12d4e4436b09)
+- **fix**: Adjust modules path
+  ([`12d4e44`](https://github.com/anaticulae/viewo-helpdesk/commit/12d4e4436b09ffb57a9507900ecdda3d592cd423))
 
-## v0.1.5
+### Refactoring
 
-## v0.1.4
+- **setup**: Cleanup setup file
+  ([`d792189`](https://github.com/anaticulae/viewo-helpdesk/commit/d792189397f501ae798cdaac651d5c5eb226f085))
+
+
+## v0.1.5 (2021-05-25)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`7f4107b`](https://github.com/anaticulae/viewo-helpdesk/commit/7f4107bc4809ee4c9a403a32b577e558e9f93fe2))
+
+
+## v0.1.4 (2021-02-16)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`2a4a580`](https://github.com/anaticulae/viewo-helpdesk/commit/2a4a58016b726d121e2fbd65daebcb92cf1f4207))
 
 ### Documentation
 
-* Happy New Year! (9c61dcb285d6)
+- **copyright**: Happy New Year!
+  ([`9c61dcb`](https://github.com/anaticulae/viewo-helpdesk/commit/9c61dcb285d60e4ed386c47451b3b716959faca2))
 
-## v0.1.3
 
-## v0.1.2
+## v0.1.3 (2020-12-20)
 
-### Feature
+### Chores
 
-* add title to dialog overview (0fe92374ef78)
+- **requirements**: Do not release so often
+  ([`ec3ac92`](https://github.com/anaticulae/viewo-helpdesk/commit/ec3ac92205221d669255f3ea8302ce26e2e1738b))
 
-## v0.1.1
+- **requirements**: Upgrade requirements.txt
+  ([`a79e5ca`](https://github.com/anaticulae/viewo-helpdesk/commit/a79e5ca302efd7cda5587be13070a1077f8ffcb1))
 
-### Feature
 
-* add method to setup variables (65cb0395eaba)
+## v0.1.2 (2020-11-18)
 
-## v0.1.0
+### Features
 
-### Feature
+- **dialog**: Add title to dialog overview
+  ([`0fe9237`](https://github.com/anaticulae/viewo-helpdesk/commit/0fe92374ef7889b840caf8dcda4a219174811807))
 
-* use auth api to login admin user (6bc90003ec5f)
-* use bootstrap to create login view (12f5c4151663)
-* add admin message center and login dialog (16605761256d)
-* extend API to send messages (d78135779337)
-* secure dialog against untrusted success (bdc412d00675)
-* add dialog presenter (c1334aab40e8)
-* add invalid return code for wrong password (6f2899ad8745)
-* add option to load single user dialog (fa734784e991)
-* secure access to admin API (855e8942b7ef)
-* add login manager (73c82969fd7a)
-* add basic api structure (54426a37b59c)
-* add data structure to load dialog's (4beba1500229)
-* add public app fixture (4e417e12eda4)
-* setup basic help desk structure (c8c299bd29f2)
 
-### Fix
+## v0.1.1 (2020-11-18)
 
-* always login successful (4a4a908a19c6)
+### Features
 
-## v0.0.0 Initial release
+- **config**: Add method to setup variables
+  ([`65cb039`](https://github.com/anaticulae/viewo-helpdesk/commit/65cb0395eabadd97e48658e70f22309fa6a369ac))
+
+
+## v0.1.0 (2020-11-18)
+
+### Bug Fixes
+
+- **fixtures**: Always login successful
+  ([`4a4a908`](https://github.com/anaticulae/viewo-helpdesk/commit/4a4a908a19c6d593c6350b2c12a11b039b877602))
+
+### Chores
+
+- **requirements**: Add flask bootstrap
+  ([`2c9b4d1`](https://github.com/anaticulae/viewo-helpdesk/commit/2c9b4d1c8c87b613b9eb51bef6e19768a8275db7))
+
+- **requirements**: Add flask login
+  ([`8b59116`](https://github.com/anaticulae/viewo-helpdesk/commit/8b5911682a1a0bdc0497a24830339db83fbf12d9))
+
+- **requirements**: Add utila, utilatest, configo, and flask
+  ([`07aa99a`](https://github.com/anaticulae/viewo-helpdesk/commit/07aa99ab57693f6a952d91a933239e46b8540ac7))
+
+- **requirements**: Upgrade requirements.txt
+  ([`b2ef095`](https://github.com/anaticulae/viewo-helpdesk/commit/b2ef095c13845563d81dc52a792eb07c9e9aea76))
+
+### Features
+
+- **admin**: Add admin message center and login dialog
+  ([`1660576`](https://github.com/anaticulae/viewo-helpdesk/commit/16605761256da6065c87241901c4647d65d4c5ac))
+
+- **api**: Add basic api structure
+  ([`54426a3`](https://github.com/anaticulae/viewo-helpdesk/commit/54426a37b59ccb7d22e8d5b5a360b0326f674d5a))
+
+- **API**: Add dialog presenter
+  ([`c1334aa`](https://github.com/anaticulae/viewo-helpdesk/commit/c1334aab40e873d76c3c752c1d4292f4b0f5bd73))
+
+- **API**: Secure access to admin API
+  ([`855e894`](https://github.com/anaticulae/viewo-helpdesk/commit/855e8942b7ef1ee368470232a894f5e2224e31b4))
+
+- **auth**: Add invalid return code for wrong password
+  ([`6f2899a`](https://github.com/anaticulae/viewo-helpdesk/commit/6f2899ad8745f2dee1ab61b5031ffd45346a7937))
+
+- **auth**: Add login manager
+  ([`73c8296`](https://github.com/anaticulae/viewo-helpdesk/commit/73c82969fd7a4134d50c56089c2393537da3a51b))
+
+- **dialog**: Add option to load single user dialog
+  ([`fa73478`](https://github.com/anaticulae/viewo-helpdesk/commit/fa734784e9918024bc0133389f1bb644b1e822b6))
+
+- **login**: Use auth api to login admin user
+  ([`6bc9000`](https://github.com/anaticulae/viewo-helpdesk/commit/6bc90003ec5f66054150d68d2b30a7f8bf40f925))
+
+- **login**: Use bootstrap to create login view
+  ([`12f5c41`](https://github.com/anaticulae/viewo-helpdesk/commit/12f5c4151663182d91678fb7512712f5f3df2ff4))
+
+- **message**: Add data structure to load dialog's
+  ([`4beba15`](https://github.com/anaticulae/viewo-helpdesk/commit/4beba15002295d88ba08e2dbfec51f6ff4240683))
+
+- **post**: Extend API to send messages
+  ([`d781357`](https://github.com/anaticulae/viewo-helpdesk/commit/d781357793372f6a021a4d20796751256da18ed4))
+
+- **security**: Secure dialog against untrusted success
+  ([`bdc412d`](https://github.com/anaticulae/viewo-helpdesk/commit/bdc412d00675971b3f3a4ab651e01c432a8af3e1))
+
+- **setup**: Setup basic help desk structure
+  ([`c8c299b`](https://github.com/anaticulae/viewo-helpdesk/commit/c8c299bd29f256314cee2c297efe3f6ff9f101a9))
+
+- **test**: Add public app fixture
+  ([`4e417e1`](https://github.com/anaticulae/viewo-helpdesk/commit/4e417e12eda4a9040e170a79af8415fab89297bc))
+
+### Refactoring
+
+- **simplify**: Simplify code
+  ([`3c735e5`](https://github.com/anaticulae/viewo-helpdesk/commit/3c735e5fe8f0cedf1f8be93ed490039d21da8f26))
+
+- **tests**: Improve test style
+  ([`e64692c`](https://github.com/anaticulae/viewo-helpdesk/commit/e64692cbcccafb220d51e4257cb55f0b33228683))
+
+### Testing
+
+- **refactor**: Move test data single creator
+  ([`bb8ba8a`](https://github.com/anaticulae/viewo-helpdesk/commit/bb8ba8aaa8eb5df456af31d433094f0cc661d896))
+
+
+## v0.0.0 (2020-11-14)
+
+- Initial Release
