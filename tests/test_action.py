@@ -9,8 +9,8 @@
 
 import pytest
 
-import admin_helpdesk
 import tests
+import viewo_helpdesk
 
 
 @pytest.mark.usefixtures('appi')
@@ -18,7 +18,7 @@ def test_action_start_converation():
     # user starts issue
     created = tests.create_single_sample()
 
-    dialog = admin_helpdesk.load_messages(tests.TESTUSER, created)
+    dialog = viewo_helpdesk.load_messages(tests.TESTUSER, created)
     assert len(dialog) == 3
     assert dialog[0].writer  # user
     assert not dialog[1].writer  # admin

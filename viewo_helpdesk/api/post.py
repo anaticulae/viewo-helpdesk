@@ -11,11 +11,11 @@ import flask
 import flask_login
 import utilo
 
-import admin_helpdesk
-import admin_helpdesk.api
+import viewo_helpdesk
+import viewo_helpdesk.api
 
 
-@admin_helpdesk.api.api_message.route('/dialog/add', methods=['POST'])
+@viewo_helpdesk.api.api_message.route('/dialog/add', methods=['POST'])
 def message_add() -> str:
     parent = flask.request.form.get('parent', None)
     userid = flask.request.form.get('userid', None)
@@ -29,7 +29,7 @@ def message_add() -> str:
     if not admin:
         userid = flask_login.current_user.get_id()
 
-    message = admin_helpdesk.Message(
+    message = viewo_helpdesk.Message(
         parent=None if new_dialog else parent,
         userid=userid,
         date=date,
@@ -39,11 +39,11 @@ def message_add() -> str:
         category=category,
     )
     if new_dialog:
-        admin_helpdesk.start_conversion(message, current=date)
+        viewo_helpdesk.start_conversion(message, current=date)
     else:
-        admin_helpdesk.write_message(message, current=date)
+        viewo_helpdesk.write_message(message, current=date)
 
     done = {'date': date}
-    uri = admin_helpdesk.api_call(f'/dialog/{userid}/{date}')
-    dumped = admin_helpdesk.api.dump(done, name='success', uri=uri)
+    uri = viewo_helpdesk.api_call(f'/dialog/{userid}/{date}')
+    dumped = viewo_helpdesk.api.dump(done, name='success', uri=uri)
     return dumped

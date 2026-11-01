@@ -7,9 +7,11 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import admin_helpdesk.message
+import utilo
+
+import viewo_helpdesk
 
 
-def dump_message(message: admin_helpdesk.message.Message) -> str:
-    raw = f'{message.title}\n\n{message.text}'
-    return raw
+def userpath(userid: str) -> str:
+    result = utilo.join(viewo_helpdesk.board(), userid)
+    return result

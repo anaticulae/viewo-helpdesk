@@ -12,11 +12,11 @@ import utilotest
 from utilotest import mp
 from utilotest import td
 
-import admin_helpdesk.config
-from admin_helpdesk.fixtures import appi
-from admin_helpdesk.fixtures import client
+import viewo_helpdesk.config
 from tests.fixtures import client_single
+from viewo_helpdesk.fixtures import appi
+from viewo_helpdesk.fixtures import client
 
 pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
 
-utilotest.setup(admin_helpdesk.config.API_PREFIX)
+utilotest.setup(viewo_helpdesk.config.API_PREFIX)

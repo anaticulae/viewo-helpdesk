@@ -31,7 +31,7 @@ def helpdesk() -> str:
 
 
 def board() -> str:
-    path = os.path.join(helpdesk(), 'messages')
+    path = utilo.join(helpdesk(), 'messages')
     os.makedirs(path, exist_ok=True)
     return path
 

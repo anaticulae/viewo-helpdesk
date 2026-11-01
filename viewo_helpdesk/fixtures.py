@@ -9,15 +9,15 @@
 
 import pytest
 
-import admin_helpdesk.api.auth
-import admin_helpdesk.app
+import viewo_helpdesk.api.auth
+import viewo_helpdesk.app
 
 
 @pytest.fixture
 def appi(td):
     """Create and configure a new app instance for each test."""
     # create the app with common test config
-    created = admin_helpdesk.app.create(config={
+    created = viewo_helpdesk.app.create(config={
         'VIEWO_HELPDESK': td.tmpdir,
         'TESTING': True,
     })
@@ -34,7 +34,7 @@ def client(appi, mp):  # pylint:disable=W0621
             return True
 
         context.setattr(
-            admin_helpdesk.api.auth,
+            viewo_helpdesk.api.auth,
             'verify_password',
             verify_password,
         )

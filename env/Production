@@ -9,13 +9,13 @@
 
 FROM 169.254.149.20:6001/arch_python:0.14.0
 
-RUN pip install "admin_helpdesk==0.3.2"
+RUN pip install "viewo_helpdesk==0.3.2"
 
-VOLUME /var/admin_helpdesk
+VOLUME /var/viewo_helpdesk
 
 ENV HOST=0.0.0.0
 ENV PORT=5000
 
-ENV VIEWO_HELPDESK=/var/admin_helpdesk
+ENV VIEWO_HELPDESK=/var/viewo_helpdesk
 
-ENTRYPOINT admin_helpdesk --host $HOST --port $PORT -VVV
+ENTRYPOINT viewo_helpdesk --host $HOST --port $PORT -VVV

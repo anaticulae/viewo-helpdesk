@@ -9,10 +9,10 @@
 
 import pytest
 
-import admin_helpdesk
+import viewo_helpdesk
 
 
 @pytest.mark.usefixtures('appi')
 def test_load_users():
-    users = admin_helpdesk.load_users()
+    users = viewo_helpdesk.load_users()
     assert not users

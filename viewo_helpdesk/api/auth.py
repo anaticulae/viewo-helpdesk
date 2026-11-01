@@ -14,8 +14,8 @@ import http
 import flask
 import flask_login
 
-import admin_helpdesk.api
-import admin_helpdesk.config
+import viewo_helpdesk.api
+import viewo_helpdesk.config
 
 NO_ACCESS = 'LOGIN REQUIRED'
 
@@ -29,7 +29,7 @@ class FlaskUser(flask_login.UserMixin):
 
     @property
     def is_admin(self):
-        return self.identifier == admin_helpdesk.config.ADMIN_NAME
+        return self.identifier == viewo_helpdesk.config.ADMIN_NAME
 
 
 def create_loginmanager(app):
@@ -41,8 +41,8 @@ def create_loginmanager(app):
 
 
 def verify_password(user: str, password: str) -> bool:
-    if user == admin_helpdesk.config.ADMIN_NAME:
-        if password == admin_helpdesk.config.ADMIN_PASSWORD:
+    if user == viewo_helpdesk.config.ADMIN_NAME:
+        if password == viewo_helpdesk.config.ADMIN_PASSWORD:
             return True
     return False
 
@@ -59,18 +59,18 @@ def load_user(userid):
     return FlaskUser(identifier=userid)
 
 
-@admin_helpdesk.api.api_auth.route('/auth')
+@viewo_helpdesk.api.api_auth.route('/auth')
 def show_login():
     return NO_ACCESS, http.HTTPStatus.UNAUTHORIZED
 
 
-@admin_helpdesk.api.api_auth.route('/logout')
+@viewo_helpdesk.api.api_auth.route('/logout')
 def logout():
     flask_login.logout_user()
     return 'DONE'
 
 
-@admin_helpdesk.api.api_auth.route('/auth', methods=['POST'])
+@viewo_helpdesk.api.api_auth.route('/auth', methods=['POST'])
 def check_login():
     if flask_login.current_user.is_authenticated:
         return 'DONE'

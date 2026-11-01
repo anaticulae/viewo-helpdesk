@@ -14,8 +14,8 @@ import flask
 import flask_login
 import utilo
 
-import admin_helpdesk
-import admin_helpdesk.config
+import viewo_helpdesk
+import viewo_helpdesk.config
 
 api_auth = flask.Blueprint('api_auth', __name__)  # pylint:disable=C0103
 api_message = flask.Blueprint('api_message', __name__)  # pylint:disable=C0103
@@ -65,7 +65,7 @@ def internal(message: str):
 
 
 def api_call(path):
-    return admin_helpdesk.config.API_PREFIX + path
+    return viewo_helpdesk.config.API_PREFIX + path
 
 
 def valid_user(function):
@@ -79,7 +79,7 @@ def valid_user(function):
         if not userid and not currentuser.is_admin:
             return notfound('not accessable')
         if userid and not currentuser.is_admin:
-            if not admin_helpdesk.valid_user(userid):
+            if not viewo_helpdesk.valid_user(userid):
                 return notfound(f'could not locate `{userid}`')
             if currentuser.get_id() != userid:
                 return notfound('not accessable')
@@ -94,7 +94,7 @@ def valid_dialog(function):
     def decorated_function(*args, **kwargs):
         userid = kwargs['userid']
         date = kwargs['date']
-        if not admin_helpdesk.valid_dialog(userid, date):
+        if not viewo_helpdesk.valid_dialog(userid, date):
             return notfound(f'could not locate `{userid}` `{date}`')
         return function(*args, **kwargs)
 

@@ -1,17 +1,27 @@
 # =============================================================================
 # C O P Y R I G H T
 # -----------------------------------------------------------------------------
-# Copyright (c) 2020-2023 by Helmut Konrad Schewe. All rights reserved.
+# Copyright (c) 2022-2023 by Helmut Konrad Schewe. All rights reserved.
 # This file is property of Helmut Konrad Schewe. Any unauthorized copy,
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import os
+FROM ghcr.io/anaticulae/baw:v1.90.1
 
-import admin_helpdesk
+ENV HOVERPOWER_STORE=/var/workdir/hoverpower/repo
 
+WORKDIR /var/install
 
-def userpath(userid: str) -> str:
-    result = os.path.join(admin_helpdesk.board(), userid)
-    return result
+COPY pyproject.toml .
+
+RUN pip install .[dev]
+RUN pip install .
+
+COPY . /var/install
+
+RUN pip install .
+
+WORKDIR /var/workdir
+
+ENTRYPOINT ["sh", "-c"]

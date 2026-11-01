@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}viewo helpdesk{% endblock %}</title>
+
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+
+    {% block content %}{% endblock %}
+
+    {{ bootstrap.load_js() }}
+
+</body>
+</html>

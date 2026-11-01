@@ -56,8 +56,8 @@ def eval_cli():
     )
     argv = parser.parse_args()
     if argv.version:
-        import admin_helpdesk
-        utilo.log(admin_helpdesk.__version__)
+        import viewo_helpdesk
+        utilo.log(viewo_helpdesk.__version__)
         sys.exit(utilo.SUCCESS)
     result = Config(
         argv.host,
@@ -69,8 +69,8 @@ def eval_cli():
 
 
 def create_app():
-    import admin_helpdesk.config
-    config = admin_helpdesk.config.validate()
-    import admin_helpdesk.app
-    result = admin_helpdesk.app.create(config=config)
+    import viewo_helpdesk.config
+    config = viewo_helpdesk.config.validate()
+    import viewo_helpdesk.app
+    result = viewo_helpdesk.app.create(config=config)
     return result
