@@ -8,6 +8,8 @@
 #==============================================================================
 
 import contextlib
+import http
+import json
 import time
 
 import utilotest
@@ -104,3 +106,31 @@ def create_single_sample():
     )
     viewo_helpdesk.write_message(money, current=NOW + 2)
     return created
+
+
+def content(
+    client,
+    request: str,
+    expected=http.HTTPStatus.OK,
+    raw: bool = False,
+):
+    response = client.get(request, follow_redirects=True)
+    assert response.status_code == expected, request + str(response)
+    if raw:
+        return response
+    return decode(response)
+
+
+def decode(
+    response,
+    expected=None,
+) -> dict:
+    """Read binary data from response and convert them to str"""
+    result = response.data.decode('utf8')
+    if expected is not None:
+        assert response.status_code == expected
+    with contextlib.suppress(json.decoder.JSONDecodeError):
+        # json format
+        return json.loads(result)
+    # html format
+    return result
