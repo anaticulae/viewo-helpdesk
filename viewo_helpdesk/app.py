@@ -28,7 +28,7 @@ def create(config=None) -> flask.Flask:
     viewo_helpdesk.api.auth.create_loginmanager(appi)
 
     appi.config.setdefault('BOOTSTRAP_SERVE_LOCAL', True)
-    flask_bootstrap.Bootstrap(app=appi)
+    flask_bootstrap.Bootstrap5(app=appi)
 
     if config:
         appi.config.update(config)
