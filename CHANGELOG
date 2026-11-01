@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.2 (2026-11-01)
+
+### Chores
+
+- **pyproject**: Remove outdated requirement
+  ([`d8ba02d`](https://github.com/anaticulae/viewo-helpdesk/commit/d8ba02d7bc06ac3e2816834acf6bf4f4dee4a16f))
+
+
 ## v1.0.1 (2026-11-01)
 
 ### Chores
